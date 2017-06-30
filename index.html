@@ -538,8 +538,7 @@
       
         
           
-            <p>1：<figure class="highlight xml"><figcaption><span>drawableTop```对应代码```setCompoundDrawablesWithIntrinsicBounds(leftDrawable,topDrawable,rightDrawable,bottomDrawable)```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">2：代码中设置```setTextColor``` 使用int color ```不能直接写#000000</div></pre></td></tr></table></figure></p>
-<p>  正确设置：<code>tv.setTextColor(Color.parseColor(&quot;#000000&quot;));</code></p>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1：xml drawableTop对应代码setCompoundDrawablesWithIntrinsicBounds(leftDrawable,topDrawable,rightDrawable,bottomDrawable)</div><div class="line"></div><div class="line">2：代码中设置setTextColor 使用int color 不能直接写#000000</div><div class="line"></div><div class="line">  正确设置：tv.setTextColor(Color.parseColor(&quot;#000000&quot;));</div></pre></td></tr></table></figure>
 
           
         
