@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Easy Life，Easy Self">
+<meta name="description" content="定义12345反射机制是指在运行状态中，    对于任意一个类能够获取其所有的属性和方法；    对于任意一个对象能够调用其所有属性和方法；    这种在运行状态中动态获取类属性和方法，以及动态调用对象的属性和方法的功能称为java语言的反射机制    通俗来说：反射就是可以实现在运行状态时获取任意一个类的属性和方法，也能调用任意一个对象的属性和方法 优缺点12345678910使用反射最大的优点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Reflect">
 <meta property="og:url" content="http://yoursite.com/2017/07/05/Reflect/index.html">
 <meta property="og:site_name" content="Queen·me">
-<meta property="og:description" content="Easy Life，Easy Self">
-<meta property="og:updated_time" content="2017-07-07T07:16:22.844Z">
+<meta property="og:description" content="定义12345反射机制是指在运行状态中，    对于任意一个类能够获取其所有的属性和方法；    对于任意一个对象能够调用其所有属性和方法；    这种在运行状态中动态获取类属性和方法，以及动态调用对象的属性和方法的功能称为java语言的反射机制    通俗来说：反射就是可以实现在运行状态时获取任意一个类的属性和方法，也能调用任意一个对象的属性和方法 优缺点12345678910使用反射最大的优点">
+<meta property="og:updated_time" content="2017-07-12T09:11:10.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reflect">
-<meta name="twitter:description" content="Easy Life，Easy Self">
+<meta name="twitter:description" content="定义12345反射机制是指在运行状态中，    对于任意一个类能够获取其所有的属性和方法；    对于任意一个对象能够调用其所有属性和方法；    这种在运行状态中动态获取类属性和方法，以及动态调用对象的属性和方法的功能称为java语言的反射机制    通俗来说：反射就是可以实现在运行状态时获取任意一个类的属性和方法，也能调用任意一个对象的属性和方法 优缺点12345678910使用反射最大的优点">
 
 
 
@@ -383,7 +383,17 @@
       
 
       
-        
+        <h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">反射机制是指在运行状态中，</div><div class="line">    对于任意一个类能够获取其所有的属性和方法；</div><div class="line">    对于任意一个对象能够调用其所有属性和方法；</div><div class="line">    这种在运行状态中动态获取类属性和方法，以及动态调用对象的属性和方法的功能称为java语言的反射机制</div><div class="line">    通俗来说：反射就是可以实现在运行状态时获取任意一个类的属性和方法，也能调用任意一个对象的属性和方法</div></pre></td></tr></table></figure>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">使用反射最大的优点是提高程序灵活性，最大的缺点是降低系统性能</div><div class="line">为什么会提高程序灵活性，这里需要了解两个概念：静态加载，动态加载</div><div class="line">静态加载：在编译时期就确定类型，绑定对象</div><div class="line">         例如：Person person=new Person();</div><div class="line">动态加载：在运行时期才确定类型，绑定对象</div><div class="line">         例如：根据反射获取类类型，通过newInstance绑定对象</div><div class="line">//new与newInstance区别：   </div><div class="line">//http://blog.csdn.net/hippoppower/article/details/4191866</div><div class="line">//new: 强类型。相对高效。能调用任何public构造。  </div><div class="line">//newInstance: 弱类型。低效率。只能调用无参构造。</div></pre></td></tr></table></figure>
+<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><h6 id="Class类和类类型"><a href="#Class类和类类型" class="headerlink" title="Class类和类类型"></a>Class类和类类型</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">类是java.lang.Class类的实例对象，而Class是所有类的类,获取类对象的三种方式：</div><div class="line">第一种：</div><div class="line">   Class c1=Person.class</div><div class="line">   这种方式是通过获取类的静态成员变量class而获取的，说明对于任意类都有一个隐含的静态成员变量class</div><div class="line">第二种：</div><div class="line">    Person p1=new Person();</div><div class="line">    Class c2=p1.getClass();</div><div class="line">    这种方式是通过调用一个类的对象的getClass()而获取</div><div class="line">第三种：</div><div class="line">    Class c3=Class.forName(com.queen.me.Person);</div><div class="line">    这种方式是Class类通过调用forName方法，传递一个类的全路径而获取</div></pre></td></tr></table></figure>
+<h6 id="获取成员方法"><a href="#获取成员方法" class="headerlink" title="获取成员方法"></a>获取成员方法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">//得到该类所有定义的方法(private,protectd,public,default)，不包括父类的方法</div><div class="line">public Method[] getDeclaredMethods();</div><div class="line">//得到该类中指定名称方法，不包括父类</div><div class="line">public Method getDeclaredMethod(String name,Class&lt;?&gt;... parameterTypes);</div><div class="line">//得到该类所有的public方法，包括父类的public方法</div><div class="line">public Method[] getMethods();</div><div class="line">//得到该类中指定名称的public方法，包括父类的public方法</div><div class="line">public Method getMethod(String name,Class&lt;?&gt;... parameterTypes);</div><div class="line"></div><div class="line">参数：</div><div class="line">name： 方法名称</div><div class="line">parameterTypes：参数类类型</div><div class="line"></div><div class="line">例如：</div><div class="line">Person类有一个方法：</div><div class="line">public void setName(String name)&#123;</div><div class="line">  this.name=name;</div><div class="line">&#125;</div><div class="line">那么如何获取这个方法呢？</div><div class="line">Class c1=Person.getClass();</div><div class="line">Method setNameMethod=c1.getDeclaredMethod(&quot;setName&quot;,String.class);</div><div class="line">System.out.println(Method.getName);</div><div class="line"></div><div class="line">调用此方法修改值：</div><div class="line">    要进行修改动作，根据Class获取不同，方法调用不同</div><div class="line">一：Class是通过对象方式得到：</div><div class="line">     Person person=new Person();</div><div class="line">     person.setName(&quot;李四&quot;);</div><div class="line">     Class c1=person.getClass();</div><div class="line">那么修改值则通过一下形式修改</div><div class="line">     setNameMethod.invoke(&quot;张三&quot;);</div><div class="line">此时，p1的姓名修改为了张三</div><div class="line"></div><div class="line">二：Class通过类静态变量和forName全路径得到的</div><div class="line">     Class c1=Person.class;</div><div class="line">     或者 </div><div class="line">     Class c1=Class.forName(&quot;com.queen.me.Person&quot;);</div><div class="line">那么修改值则需要指定修改对象，</div><div class="line">      Person p=new Person();</div><div class="line">      p.setName(&quot;李四&quot;);</div><div class="line">      setNameMethod.invoke(p,&quot;zhangsan&quot;);</div><div class="line">此时，p的姓名修改为了张三</div><div class="line"></div><div class="line">注意：如果方法权限为private，则需要设置，其他权限不需要设置</div><div class="line">     setNameMethod.setAccessible(true);</div></pre></td></tr></table></figure>
+<h6 id="获取成员变量"><a href="#获取成员变量" class="headerlink" title="获取成员变量"></a>获取成员变量</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//得到该类所有定义的成员变量(private,protected,public,default)，不包括父类的</div><div class="line">public Field[] getDeclaredFields();</div><div class="line">//得到该类指定名称变量，不包括父类的</div><div class="line">public Field getDeclaredFiled(String name);</div><div class="line">//得到该类所有public成员变量，包括父类的public成员变量</div><div class="line">public Field[] getFields();</div><div class="line">//得到该类指定名称public变量，包括父类的public成员变量</div><div class="line">public Field getField(String name);</div><div class="line"></div><div class="line">参数：</div><div class="line">name：变量名称</div><div class="line"></div><div class="line">例如：</div><div class="line">Person类有一个成员变量：</div><div class="line">private String name；</div><div class="line">那么如何获取这个成员变量呢？</div><div class="line">Class c1=Person.class;</div><div class="line">Field nameField=c1.getDeclaredField(&quot;name&quot;);</div><div class="line">System.out.println(nameField.getName);</div><div class="line"></div><div class="line">如何修改此成员变量值呢？</div><div class="line">与修改成员方法规则一样，根据Class获取形式不同，修改不同</div><div class="line">一：Class是通过对象方式得到：</div><div class="line">     Person person=new Person();</div><div class="line">     person.setName(&quot;李四&quot;);</div><div class="line">     Class c1=person.getClass();</div><div class="line">那么修改值则通过一下形式修改</div><div class="line">     nameField.set(person,&quot;张三&quot;);</div><div class="line"></div><div class="line">二：Class通过类静态变量和forName全路径得到的</div><div class="line">     Class c1=Person.class;</div><div class="line">     或者 </div><div class="line">     Class c1=Class.forName(&quot;com.queen.me.Person&quot;);</div><div class="line">那么修改值则需要指定修改对象，</div><div class="line">      Person p=new Person();</div><div class="line">      p.setName(&quot;李四&quot;);</div><div class="line">      nameField.set(person,&quot;张三&quot;);</div><div class="line">注意：如果方法权限为private，则需要设置，其他权限不需要设置</div><div class="line">     nameField.setAccessible(true);</div></pre></td></tr></table></figure>
+<h6 id="获取构造函数"><a href="#获取构造函数" class="headerlink" title="获取构造函数"></a>获取构造函数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">//得到该类所有定义的构造函数(private,protected,public,default)，不包括父类的</div><div class="line">public Constructor&lt;?&gt;[] getDeclaredConstructors()</div><div class="line">//得到该类指定构造函数</div><div class="line">public Constructor&lt;T&gt; getDeclaredConstructor(Class&lt;?&gt;... parameterTypes);</div><div class="line">//得到该类所有public构造函数，包括父类的public构造函数</div><div class="line">public Constructor&lt;?&gt;[] getConstructors();</div><div class="line">//得到该类指定的public构造函数，包括父类的public构造函数</div><div class="line">public Constructor&lt;T&gt; getConstructor(Class&lt;?&gt;... parameterTypes);</div><div class="line"></div><div class="line">参数：</div><div class="line">parameterTypes：参数类类型</div><div class="line"></div><div class="line">例如：</div><div class="line">Person类中的构造函数是：</div><div class="line">private String name;</div><div class="line">public Person()&#123;</div><div class="line">&#125;</div><div class="line">public Person(String name)&#123;</div><div class="line">  this.name=name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">那么如何获取这个构造函数呢？</div><div class="line">Class c1=Person.class;</div><div class="line">Constructor&lt;T&gt; constructor=c1.getDecalaredConstructor(String.class);</div><div class="line">Object obj=constructor.newInstance(&quot;张三&quot;);</div><div class="line">注意：Class的newInstance方法，只能创建只包含无参数的构造函数的类</div><div class="line"></div><div class="line">如果类中没有无参构造函数，只有带参的构造函数，那么需要如下方式获取构造函数：</div><div class="line">fromClass.getDeclaredConstructor(String.class).newInstance(&quot;tengj&quot;);</div><div class="line">------待完善</div></pre></td></tr></table></figure>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p>反射基础知识</p>
+<p><a href="http://www.jianshu.com/p/f67182a482eb" target="_blank" rel="external">http://www.jianshu.com/p/f67182a482eb</a></p>
+<p>反射基本应用</p>
+<p><a href="http://blog.csdn.net/shenyunsese/article/details/11737179" target="_blank" rel="external">http://blog.csdn.net/shenyunsese/article/details/11737179</a></p>
+
       
     </div>
 
@@ -478,8 +488,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -505,7 +524,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -532,6 +551,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优缺点"><span class="nav-number">2.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API"><span class="nav-number">3.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Class类和类类型"><span class="nav-number">3.0.1.</span> <span class="nav-text">Class类和类类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取成员方法"><span class="nav-number">3.0.2.</span> <span class="nav-text">获取成员方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取成员变量"><span class="nav-number">3.0.3.</span> <span class="nav-text">获取成员变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取构造函数"><span class="nav-number">3.0.4.</span> <span class="nav-text">获取构造函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用"><span class="nav-number">4.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文章"><span class="nav-number">5.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
