@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Easy Life，Easy Self">
+<meta name="description" content="定义1注解：通俗理解就是对源代码添加额外信息，但不影响代码运行 语法12345定义一个注解和定义一个接口类似，就是多了一个&quot;@&quot;符号定义注解语法：public @interface MyAnnotation&amp;#123;  &amp;#125; 元注解1234567891011121314151617181920212223241：定义  修饰注解的信息2：分类    @Retention  注解存活时间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Annotation">
 <meta property="og:url" content="http://yoursite.com/2017/07/05/Annotation/index.html">
 <meta property="og:site_name" content="Queen·me">
-<meta property="og:description" content="Easy Life，Easy Self">
-<meta property="og:updated_time" content="2017-07-07T07:16:02.531Z">
+<meta property="og:description" content="定义1注解：通俗理解就是对源代码添加额外信息，但不影响代码运行 语法12345定义一个注解和定义一个接口类似，就是多了一个&quot;@&quot;符号定义注解语法：public @interface MyAnnotation&amp;#123;  &amp;#125; 元注解1234567891011121314151617181920212223241：定义  修饰注解的信息2：分类    @Retention  注解存活时间">
+<meta property="og:updated_time" content="2017-07-13T08:47:07.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Annotation">
-<meta name="twitter:description" content="Easy Life，Easy Self">
+<meta name="twitter:description" content="定义1注解：通俗理解就是对源代码添加额外信息，但不影响代码运行 语法12345定义一个注解和定义一个接口类似，就是多了一个&quot;@&quot;符号定义注解语法：public @interface MyAnnotation&amp;#123;  &amp;#125; 元注解1234567891011121314151617181920212223241：定义  修饰注解的信息2：分类    @Retention  注解存活时间">
 
 
 
@@ -383,7 +383,26 @@
       
 
       
-        
+        <h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">注解：通俗理解就是对源代码添加额外信息，但不影响代码运行</div></pre></td></tr></table></figure>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">定义一个注解和定义一个接口类似，就是多了一个<span class="string">"@"</span>符号</div><div class="line">定义注解语法：</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>：定义</div><div class="line">  修饰注解的信息</div><div class="line"><span class="number">2</span>：分类  </div><div class="line">  <span class="meta">@Retention</span></div><div class="line">  注解存活时间</div><div class="line">  取值： RetentionPolicy.SOURCE 只在源码阶段保留，在编译时期将被忽视丢弃</div><div class="line">        RetentionPolicy.CLASS 保留到编辑时期，但不会被加载到JVM中</div><div class="line">        RetetionPolicy.RUNTIME 保留到运行时期，被加载到JVM中，在程序运行时期可以                                 获取到</div><div class="line">  <span class="meta">@Documented</span></div><div class="line">  将注解中的元素包含到JavaDoc中</div><div class="line">  <span class="meta">@Target</span></div><div class="line">  注解目标即注解信息运用到什么地方</div><div class="line">  取值：ElementType.ANNOTATION_TYPE 运用在注解上，即给注解添加注解</div><div class="line">        ElementType.CONSTRUCTOR 运用在构造函数上</div><div class="line">        ElementType.FIELD 运用在属性字段上</div><div class="line">        ElementType.LOCAL_VARIABLE 运用在局部变量上</div><div class="line">        ElementType.METHOD 运用在方法上</div><div class="line">        ElementType.PACKAGE 运用在包上</div><div class="line">        ElementType.PARAMETER 运用在方法参数上</div><div class="line">        ElementType.TYPE 运用在类型上，比如类，接口，枚举</div><div class="line">  <span class="meta">@Inherited</span></div><div class="line">  子类继承超类的注解，即如果超类运用了某种注解，那么子类就继承了此注解</div><div class="line">  <span class="meta">@Repeatable</span></div><div class="line">  注解可重复</div></pre></td></tr></table></figure>
+<h4 id="注解属性"><a href="#注解属性" class="headerlink" title="注解属性"></a>注解属性</h4><h6 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">注解的属性也叫成员变量，注意注解只有成员变量，没有成员方法</div><div class="line">  </div><div class="line">注解的属性以“无形参的方法”形式定义，其方法名定义了属性的名字，其返回值定义了属性的类型</div><div class="line">例如：</div><div class="line"><span class="meta">@Retention</span>(RetationPolicy.RUNTIME)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation&#123;</div><div class="line">  <span class="function"><span class="keyword">int</span> <span class="title">id</span><span class="params">()</span></span>;</div><div class="line">  <span class="function">String <span class="title">msg</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyAnnotation 中含有两个属性，id，msg</div><div class="line">  </div><div class="line">注意：属性类型只能是<span class="number">8</span>种基本类型，类，接口，注解，数组</div></pre></td></tr></table></figure>
+<h6 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">例如：A类要添加MyAnnotation注解，并对注解属性进行赋值</div><div class="line"><span class="meta">@MyAnnotation</span>(id=<span class="number">1</span>,msg=<span class="string">"信息"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">成员变量可以有默认值，默认值需要用<span class="string">"default"</span>关键字指定，默认值形式为：</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation&#123;</div><div class="line">  <span class="function"><span class="keyword">int</span> <span class="title">id</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;</div><div class="line">  <span class="function">Stirng <span class="title">msg</span><span class="params">()</span> <span class="keyword">default</span> "hello"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">如果A类应用此注解，如果用户在注解括号中不添加任何赋值，A类使用默认值，例如</div><div class="line"> <span class="meta">@MyAnnotation</span>()</div><div class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</div><div class="line">    </div><div class="line">  &#125;</div><div class="line">此时，注解属性 id使用默认值-<span class="number">1</span>，msg使用默认值hello</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">如果一个注解内仅仅只有一个名字为value的属性时，应用这个注解时可以直接在注解括号中填写值，例如</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation&#123;</div><div class="line">  <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</div><div class="line">&#125;  </div><div class="line">A类要应用此注解</div><div class="line"><span class="meta">@MyAnnotion</span>(<span class="string">"注解"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">注解可以没有任何属性 例如：</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotion&#123;</div><div class="line">  </div><div class="line">&#125; </div><div class="line">如果A类要应用此注解，括号可以省略，例如：</div><div class="line"><span class="meta">@MyAnnotation</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Java预置注解"><a href="#Java预置注解" class="headerlink" title="Java预置注解"></a>Java预置注解</h4><h6 id="Deprecated"><a href="#Deprecated" class="headerlink" title="@Deprecated"></a>@Deprecated</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">用于标记过时元素，编译器在编译时期遇到这个注解会发出警告，告诉开发者正在调用一个过时的元素，比如过时的方法，过时的类，过时的成员变量</div></pre></td></tr></table></figure>
+<p>@Override</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">标记子类要复写父类中被@Override修饰的方法</div></pre></td></tr></table></figure>
+<p>@SuppressWarnings</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">忽略警告</div></pre></td></tr></table></figure>
+<p>@SafeVarargs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">参数安全性注解</div></pre></td></tr></table></figure>
+<p>@FunctionInterface</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">函数式接口注解</div></pre></td></tr></table></figure>
+<h4 id="提取注解"><a href="#提取注解" class="headerlink" title="提取注解"></a>提取注解</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">注解通过反射获取</div><div class="line"></div><div class="line">isAnnotationPresent():判断是否应用了注解</div><div class="line"></div><div class="line">getAnnotaion(Class annotationClass)：获取单个注解对象</div><div class="line">getAnnotaions(Class annotationClass)：获取所有注解对象</div><div class="line">----------------待完善</div></pre></td></tr></table></figure>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="http://www.jianshu.com/p/b0a42f499558" target="_blank" rel="external">http://www.jianshu.com/p/b0a42f499558</a></p>
+
       
     </div>
 
@@ -478,8 +497,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -494,7 +522,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -532,6 +560,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元注解"><span class="nav-number">3.</span> <span class="nav-text">元注解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注解属性"><span class="nav-number">4.</span> <span class="nav-text">注解属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#定义-1"><span class="nav-number">4.0.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#赋值"><span class="nav-number">4.0.2.</span> <span class="nav-text">赋值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java预置注解"><span class="nav-number">5.</span> <span class="nav-text">Java预置注解</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Deprecated"><span class="nav-number">5.0.1.</span> <span class="nav-text">@Deprecated</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提取注解"><span class="nav-number">6.</span> <span class="nav-text">提取注解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文章"><span class="nav-number">7.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -290,6 +290,309 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/底部、顶部导航Utils封装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/30/底部、顶部导航Utils封装/" itemprop="url">
+                  底部、顶部导航Utils封装
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T14:54:40+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开源/" itemprop="url" rel="index">
+                    <span itemprop="name">开源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="底部导航Utils封装"><a href="#底部导航Utils封装" class="headerlink" title="底部导航Utils封装"></a>底部导航Utils封装</h4><p>1：低级错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在构造函数findViews出现了低级错误，通过findViewById寻找itemMenuView时，目标对象设置错误，应设置为</div><div class="line"></div><div class="line">activity，自己却设置了menuView，导致设置的回调监听不执行</div></pre></td></tr></table></figure>
+<p>2：menu保持选中状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">刚开始自己使用selector，但是selector是不能保持状态的，当itemMenuView失去焦点后，状态还原</div><div class="line"></div><div class="line">正确的做法：在代码中动态设置</div><div class="line"></div><div class="line">弄清selector使用场景</div></pre></td></tr></table></figure>
+<p>3：include 位于屏幕底部</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">由于include只能设置一些简单的layout属性，因此想要include处于屏幕底部，需要搭配RelativeLayout</div></pre></td></tr></table></figure>
+<h4 id="顶部导航Utils封装"><a href="#顶部导航Utils封装" class="headerlink" title="顶部导航Utils封装"></a>顶部导航Utils封装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1：因为顶部导航使用频繁，考虑到fragment也会使用，因此封装了fragment和activity两种方式</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/TextView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/30/TextView/" itemprop="url">
+                  TextView
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T14:54:19+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Anroid基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Anroid基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Anroid基础知识/Android-API/" itemprop="url" rel="index">
+                    <span itemprop="name">Android API</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1：xml drawableTop对应代码    </div><div class="line"> setCompoundDrawablesWithIntrinsicBounds(leftDrawable,topDrawable,rightDrawable,bottomDrawable)</div><div class="line"></div><div class="line">2：代码中设置setTextColor 使用int color 不能直接写#000000</div><div class="line"></div><div class="line">  正确设置：tv.setTextColor(Color.parseColor("#000000"));</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/shape和selector/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -400,9 +703,9 @@
       
         
           
-            <h4 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;shape</div><div class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:shape=[&quot;rectangle&quot; | &quot;oval&quot; | &quot;line&quot; | &quot;ring&quot;] &gt;</div><div class="line">    &lt;corners</div><div class="line">        android:radius=&quot;integer&quot;</div><div class="line">        android:topLeftRadius=&quot;integer&quot;</div><div class="line">        android:topRightRadius=&quot;integer&quot;</div><div class="line">        android:bottomLeftRadius=&quot;integer&quot;</div><div class="line">        android:bottomRightRadius=&quot;integer&quot; /&gt;</div><div class="line">    &lt;gradient</div><div class="line">        android:angle=&quot;integer&quot;</div><div class="line">        android:centerX=&quot;float&quot;</div><div class="line">        android:centerY=&quot;float&quot;</div><div class="line">        android:centerColor=&quot;integer&quot;</div><div class="line">        android:endColor=&quot;color&quot;</div><div class="line">        android:gradientRadius=&quot;integer&quot;</div><div class="line">        android:startColor=&quot;color&quot;</div><div class="line">        android:type=[&quot;linear&quot; | &quot;radial&quot; | &quot;sweep&quot;]</div><div class="line">        android:useLevel=[&quot;true&quot; | &quot;false&quot;] /&gt;</div><div class="line">    &lt;padding</div><div class="line">        android:left=&quot;integer&quot;</div><div class="line">        android:top=&quot;integer&quot;</div><div class="line">        android:right=&quot;integer&quot;</div><div class="line">        android:bottom=&quot;integer&quot; /&gt;</div><div class="line">    &lt;size</div><div class="line">        android:width=&quot;integer&quot;</div><div class="line">        android:height=&quot;integer&quot; /&gt;</div><div class="line">    &lt;solid</div><div class="line">        android:color=&quot;color&quot; /&gt;</div><div class="line">    &lt;stroke</div><div class="line">        android:width=&quot;integer&quot;</div><div class="line">        android:color=&quot;color&quot;</div><div class="line">        android:dashWidth=&quot;integer&quot;</div><div class="line">        android:dashGap=&quot;integer&quot; /&gt;</div><div class="line">&lt;/shape&gt;</div><div class="line"></div><div class="line">1：shape可以画四种图形，分别是：矩形（rectangle）、椭圆（oval）、线（line）、圆环（ring）</div><div class="line">2：corners： 指圆角大小</div><div class="line">3：gradient：设置渐变</div><div class="line">   android:angle：渐变角度：0:左到右;90:下到上;180:右到左;270:上到下</div><div class="line">4：padding：设置内边距</div><div class="line">5：size：设置大小</div><div class="line">6：solid：设置填充颜色 </div><div class="line">7：stroke：设置边框</div><div class="line">    android:width：边框大小</div><div class="line">8：注意</div><div class="line">  画不同的shape，则属性搭配不同</div><div class="line">9:官方地址：--&gt;开发--API 指南--可绘制对象资源</div></pre></td></tr></table></figure>
-<h4 id="selector"><a href="#selector" class="headerlink" title="selector"></a>selector</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:constantSize=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">    android:dither=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">    android:variablePadding=[&quot;true&quot; | &quot;false&quot;] &gt;</div><div class="line">    &lt;item</div><div class="line">        android:drawable=&quot;@[package:]drawable/drawable_resource&quot;</div><div class="line">        android:state_pressed=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">        android:state_focused=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">        android:state_hovered=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">        android:state_selected=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">        android:state_checkable=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">        android:state_checked=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">        android:state_enabled=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">        android:state_activated=[&quot;true&quot; | &quot;false&quot;]</div><div class="line">        android:state_window_focused=[&quot;true&quot; | &quot;false&quot;] /&gt;</div><div class="line">&lt;/selector&gt;</div><div class="line"></div><div class="line">1:十种状态</div><div class="line">  pressed、focused、hovered、selected、checkable、checked、enabled、activated、window_focused、default</div><div class="line">2：匹配顺序</div><div class="line">   根据当前对象状态，在selector集合中从上到下匹配，被匹配到的第一项&lt;item&gt;作为对象的背景色</div><div class="line">3：注意点 </div><div class="line"> 3.1：根据从上到下进行匹配时，只要能匹配上，则结束匹配，然而每一个View对象都有默认状态，所以这也就是为什么默认状态不能放在开头，而要放到最后的原因。</div><div class="line"> 3.2：不是所有的View子类都拥有所有的状态，比如Button对象，拥有pressed、enabled、window_focused、default四种状态，如果设置selected是无效的，所以要根据组件的具体情况设置。</div><div class="line"> 3.3：状态的顺序排放</div><div class="line">pressed-&gt;focused-&gt;selected-&gt;checkable-&gt;checked-&gt;enabled-&gt;window_focused-&gt;default</div><div class="line">具体排放顺序还得根据当前View对象拥有的状态来排列。记住默认的权重是最大的，要放在最后面。</div></pre></td></tr></table></figure>
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">https://developer.android.com/guide/topics/resources/drawable-resource.html?hl=zh-cn#Shape  </div><div class="line"></div><div class="line">shape ：http://www.jianshu.com/p/ef734937b521</div><div class="line">        http://keeganlee.me/post/android/20150830</div><div class="line"></div><div class="line">selector：http://www.jianshu.com/p/939a6d5760d8</div><div class="line"></div><div class="line">封装selector：https://github.com/niniloveyou/StateButton/blob/master/README_CHINESE.md</div></pre></td></tr></table></figure>
+            <h4 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line">&lt;shape</div><div class="line">    xmlns:android="http://schemas.android.com/apk/res/android"</div><div class="line">    android:shape=["rectangle" | "oval" | "line" | "ring"] &gt;</div><div class="line">    &lt;corners</div><div class="line">        android:radius="integer"</div><div class="line">        android:topLeftRadius="integer"</div><div class="line">        android:topRightRadius="integer"</div><div class="line">        android:bottomLeftRadius="integer"</div><div class="line">        android:bottomRightRadius="integer" /&gt;</div><div class="line">    &lt;gradient</div><div class="line">        android:angle="integer"</div><div class="line">        android:centerX="float"</div><div class="line">        android:centerY="float"</div><div class="line">        android:centerColor="integer"</div><div class="line">        android:endColor="color"</div><div class="line">        android:gradientRadius="integer"</div><div class="line">        android:startColor="color"</div><div class="line">        android:type=["linear" | "radial" | "sweep"]</div><div class="line">        android:useLevel=["true" | "false"] /&gt;</div><div class="line">    &lt;padding</div><div class="line">        android:left="integer"</div><div class="line">        android:top="integer"</div><div class="line">        android:right="integer"</div><div class="line">        android:bottom="integer" /&gt;</div><div class="line">    &lt;size</div><div class="line">        android:width="integer"</div><div class="line">        android:height="integer" /&gt;</div><div class="line">    &lt;solid</div><div class="line">        android:color="color" /&gt;</div><div class="line">    &lt;stroke</div><div class="line">        android:width="integer"</div><div class="line">        android:color="color"</div><div class="line">        android:dashWidth="integer"</div><div class="line">        android:dashGap="integer" /&gt;</div><div class="line">&lt;/shape&gt;</div><div class="line"></div><div class="line">1：shape可以画四种图形，分别是：矩形（rectangle）、椭圆（oval）、线（line）、圆环（ring）</div><div class="line">2：corners： 指圆角大小</div><div class="line">3：gradient：设置渐变</div><div class="line">   android:angle：渐变角度：0:左到右;90:下到上;180:右到左;270:上到下</div><div class="line">4：padding：设置内边距</div><div class="line">5：size：设置大小</div><div class="line">6：solid：设置填充颜色 </div><div class="line">7：stroke：设置边框</div><div class="line">    android:width：边框大小</div><div class="line">8：注意</div><div class="line">  画不同的shape，则属性搭配不同</div><div class="line">9:官方地址：--&gt;开发--API 指南--可绘制对象资源</div></pre></td></tr></table></figure>
+<h4 id="selector"><a href="#selector" class="headerlink" title="selector"></a>selector</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line">&lt;selector xmlns:android="http://schemas.android.com/apk/res/android"</div><div class="line">    android:constantSize=["true" | "false"]</div><div class="line">    android:dither=["true" | "false"]</div><div class="line">    android:variablePadding=["true" | "false"] &gt;</div><div class="line">    &lt;item</div><div class="line">        android:drawable="@[package:]drawable/drawable_resource"</div><div class="line">        android:state_pressed=["true" | "false"]</div><div class="line">        android:state_focused=["true" | "false"]</div><div class="line">        android:state_hovered=["true" | "false"]</div><div class="line">        android:state_selected=["true" | "false"]</div><div class="line">        android:state_checkable=["true" | "false"]</div><div class="line">        android:state_checked=["true" | "false"]</div><div class="line">        android:state_enabled=["true" | "false"]</div><div class="line">        android:state_activated=["true" | "false"]</div><div class="line">        android:state_window_focused=["true" | "false"] /&gt;</div><div class="line">&lt;/selector&gt;</div><div class="line"></div><div class="line">1:十种状态</div><div class="line">  pressed、focused、hovered、selected、checkable、checked、enabled、activated、window_focused、default</div><div class="line">2：匹配顺序</div><div class="line">   根据当前对象状态，在selector集合中从上到下匹配，被匹配到的第一项&lt;item&gt;作为对象的背景色</div><div class="line">3：注意点 </div><div class="line"> 3.1：根据从上到下进行匹配时，只要能匹配上，则结束匹配，然而每一个View对象都有默认状态，所以这也就是为什么默认状态不能放在开头，而要放到最后的原因。</div><div class="line"> 3.2：不是所有的View子类都拥有所有的状态，比如Button对象，拥有pressed、enabled、window_focused、default四种状态，如果设置selected是无效的，所以要根据组件的具体情况设置。</div><div class="line"> 3.3：状态的顺序排放</div><div class="line">pressed-&gt;focused-&gt;selected-&gt;checkable-&gt;checked-&gt;enabled-&gt;window_focused-&gt;default</div><div class="line">具体排放顺序还得根据当前View对象拥有的状态来排列。记住默认的权重是最大的，要放在最后面。</div></pre></td></tr></table></figure>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">https://developer.android.com/guide/topics/resources/drawable-resource.html?hl=zh-cn#Shape  </div><div class="line"></div><div class="line">shape ：http://www.jianshu.com/p/ef734937b521</div><div class="line">        http://keeganlee.me/post/android/20150830</div><div class="line"></div><div class="line">selector：http://www.jianshu.com/p/939a6d5760d8</div><div class="line"></div><div class="line">封装selector：https://github.com/niniloveyou/StateButton/blob/master/README_CHINESE.md</div></pre></td></tr></table></figure>
 
           
         
@@ -1425,299 +1728,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/16/Hexo+GithubPage搭建属于自己的博客（三）-新增、删除、编辑文章/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/16/Hexo+GithubPage搭建属于自己的博客（三）-新增、删除、编辑文章/" itemprop="url">
-                  Hexo+GithubPage搭建属于自己的博客（三）--新增、删除、编辑文章
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T15:16:51+08:00">
-                2017-06-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="新增文章"><a href="#新增文章" class="headerlink" title="新增文章"></a>新增文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1：在博客文件夹下打开Git Bash命令行</div><div class="line"></div><div class="line">2：输入hexo new  &lt;title&gt; ---&gt;新建文章</div><div class="line"></div><div class="line">3：使用MD编辑器编辑文章</div><div class="line"></div><div class="line">4：发布文章</div><div class="line"></div><div class="line">在Git Bash命令行下输入</div><div class="line"></div><div class="line">hexo g -d</div><div class="line"></div><div class="line">http://res.cloudinary.com/queenme/image/upload/v1497599503/%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0_gqxmbq.jpg</div></pre></td></tr></table></figure>
-<h4 id="删除文章"><a href="#删除文章" class="headerlink" title="删除文章"></a>删除文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1：本地删除</div><div class="line"></div><div class="line">  首先进入到source / _post 文件夹中，找到要删除的文件(.md)，在本地直接执行删除</div><div class="line">  </div><div class="line">2：在Git Bash命令下输入</div><div class="line">   hexo g -d</div></pre></td></tr></table></figure>
-<h4 id="编辑文章"><a href="#编辑文章" class="headerlink" title="编辑文章"></a>编辑文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1：本地编辑</div><div class="line"></div><div class="line">  首先进入到source / _post 文件夹中，找到要编辑的文件进行修改(.md)</div><div class="line">  </div><div class="line">2：在Git Bash命令下输入</div><div class="line">   hexo g -d</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/16/技术网站/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/16/技术网站/" itemprop="url">
-                  技术网站
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T14:52:20+08:00">
-                2017-06-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Android官方学习网站"><a href="#Android官方学习网站" class="headerlink" title="Android官方学习网站"></a>Android官方学习网站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1：博客学习</div><div class="line"></div><div class="line">https://android-developers.googleblog.com/2017/</div><div class="line"></div><div class="line">2：API</div><div class="line"></div><div class="line">https://developer.android.google.cn/index.html  中文</div><div class="line"></div><div class="line">https://developer.android.com/index.html 英文</div></pre></td></tr></table></figure>
-<h3 id="技术网站"><a href="#技术网站" class="headerlink" title="技术网站"></a>技术网站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1：掘金</div><div class="line"></div><div class="line">   https://juejin.im/   </div><div class="line"></div><div class="line">   纯技术网站</div><div class="line"></div><div class="line">2：简书</div><div class="line"></div><div class="line">   http://www.jianshu.com/</div><div class="line"></div><div class="line">   文章质量很高，但是不是纯技术的</div><div class="line"></div><div class="line">3：泡在网上的日子</div><div class="line"></div><div class="line">   http://www.jcodecraeer.com/</div><div class="line"></div><div class="line">   技术网站</div></pre></td></tr></table></figure>
-<h3 id="个人网站推荐"><a href="#个人网站推荐" class="headerlink" title="个人网站推荐"></a>个人网站推荐</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">1：技术小黑屋</div><div class="line"></div><div class="line">  http://droidyue.com/</div><div class="line"></div><div class="line">  文章质量高</div><div class="line"></div><div class="line">2：Trinea</div><div class="line"></div><div class="line"> http://www.trinea.cn/</div><div class="line"></div><div class="line">  开源项目</div><div class="line"></div><div class="line">3：stormzhang</div><div class="line"></div><div class="line">http://stormzhang.com/</div><div class="line"></div><div class="line">目前网络比较火的Android开发人员</div><div class="line"></div><div class="line">4：</div><div class="line">http://cmsblogs.com/</div><div class="line">Java基础夯实</div></pre></td></tr></table></figure>
-<h3 id="问答社区"><a href="#问答社区" class="headerlink" title="问答社区"></a>问答社区</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1：stackoverflow</div><div class="line"></div><div class="line">https://stackoverflow.com/</div><div class="line"></div><div class="line">stackoverflow不用提了  全球闻名问答社区</div></pre></td></tr></table></figure>
-<h3 id="工具类网站"><a href="#工具类网站" class="headerlink" title="工具类网站"></a>工具类网站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">1：Android工具网站</div><div class="line"></div><div class="line">http://www.androiddevtools.cn/</div><div class="line"></div><div class="line">超全面的Android开发工具网站</div><div class="line"></div><div class="line">2：Json</div><div class="line"></div><div class="line">http://www.sojson.com/yasuo.html</div><div class="line"></div><div class="line">功能很全面的网站</div><div class="line"></div><div class="line">3：RGB与16位数颜色转化网站</div><div class="line"></div><div class="line">http://www.sioe.cn/yingyong/yanse-rgb-16/</div><div class="line"></div><div class="line">颜色取值</div><div class="line"></div><div class="line">4：在线API</div><div class="line"></div><div class="line">http://tool.oschina.net/apidocs</div><div class="line"></div><div class="line">查阅API</div><div class="line"></div><div class="line">5：思维导图</div><div class="line"></div><div class="line">http://naotu.baidu.com/</div></pre></td></tr></table></figure>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">1：HiJson</div><div class="line"></div><div class="line">json字符串格式化查看工具</div><div class="line"></div><div class="line">2：jd-gui</div><div class="line"></div><div class="line">http://jd.benow.ca/</div><div class="line"></div><div class="line">查看jar源码</div><div class="line"></div><div class="line">3：Typora</div><div class="line"></div><div class="line">https://typora.io/    </div><div class="line"></div><div class="line">Markdown 编辑器 即时效果</div><div class="line"></div><div class="line">4：processon</div><div class="line"></div><div class="line"> https://www.processon.com/</div><div class="line"> </div><div class="line"> 在线流程图</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1767,7 +1777,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
