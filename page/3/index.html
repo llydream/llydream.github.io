@@ -290,7 +290,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/常用快捷键/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/Android-shape和selector/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Queen·me">
@@ -312,8 +312,430 @@
             
               
                 
-                <a class="post-title-link" href="/2017/06/22/常用快捷键/" itemprop="url">
-                  常用快捷键
+                <a class="post-title-link" href="/2017/06/30/Android-shape和selector/" itemprop="url">
+                  Android-shape和selector
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T14:08:24+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Anroid基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Anroid基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Anroid基础知识/Android-API/" itemprop="url" rel="index">
+                    <span itemprop="name">Android API</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line">&lt;shape</div><div class="line">    xmlns:android="http://schemas.android.com/apk/res/android"</div><div class="line">    android:shape=["rectangle" | "oval" | "line" | "ring"] &gt;</div><div class="line">    &lt;corners</div><div class="line">        android:radius="integer"</div><div class="line">        android:topLeftRadius="integer"</div><div class="line">        android:topRightRadius="integer"</div><div class="line">        android:bottomLeftRadius="integer"</div><div class="line">        android:bottomRightRadius="integer" /&gt;</div><div class="line">    &lt;gradient</div><div class="line">        android:angle="integer"</div><div class="line">        android:centerX="float"</div><div class="line">        android:centerY="float"</div><div class="line">        android:centerColor="integer"</div><div class="line">        android:endColor="color"</div><div class="line">        android:gradientRadius="integer"</div><div class="line">        android:startColor="color"</div><div class="line">        android:type=["linear" | "radial" | "sweep"]</div><div class="line">        android:useLevel=["true" | "false"] /&gt;</div><div class="line">    &lt;padding</div><div class="line">        android:left="integer"</div><div class="line">        android:top="integer"</div><div class="line">        android:right="integer"</div><div class="line">        android:bottom="integer" /&gt;</div><div class="line">    &lt;size</div><div class="line">        android:width="integer"</div><div class="line">        android:height="integer" /&gt;</div><div class="line">    &lt;solid</div><div class="line">        android:color="color" /&gt;</div><div class="line">    &lt;stroke</div><div class="line">        android:width="integer"</div><div class="line">        android:color="color"</div><div class="line">        android:dashWidth="integer"</div><div class="line">        android:dashGap="integer" /&gt;</div><div class="line">&lt;/shape&gt;</div><div class="line"></div><div class="line">1：shape可以画四种图形，分别是：矩形（rectangle）、椭圆（oval）、线（line）、圆环（ring）</div><div class="line">2：corners： 指圆角大小</div><div class="line">3：gradient：设置渐变</div><div class="line">   android:angle：渐变角度：0:左到右;90:下到上;180:右到左;270:上到下</div><div class="line">4：padding：设置内边距</div><div class="line">5：size：设置大小</div><div class="line">6：solid：设置填充颜色 </div><div class="line">7：stroke：设置边框</div><div class="line">    android:width：边框大小</div><div class="line">8：注意</div><div class="line">  画不同的shape，则属性搭配不同</div><div class="line">9:官方地址：--&gt;开发--API 指南--可绘制对象资源</div></pre></td></tr></table></figure>
+<h4 id="selector"><a href="#selector" class="headerlink" title="selector"></a>selector</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line">&lt;selector xmlns:android="http://schemas.android.com/apk/res/android"</div><div class="line">    android:constantSize=["true" | "false"]</div><div class="line">    android:dither=["true" | "false"]</div><div class="line">    android:variablePadding=["true" | "false"] &gt;</div><div class="line">    &lt;item</div><div class="line">        android:drawable="@[package:]drawable/drawable_resource"</div><div class="line">        android:state_pressed=["true" | "false"]</div><div class="line">        android:state_focused=["true" | "false"]</div><div class="line">        android:state_hovered=["true" | "false"]</div><div class="line">        android:state_selected=["true" | "false"]</div><div class="line">        android:state_checkable=["true" | "false"]</div><div class="line">        android:state_checked=["true" | "false"]</div><div class="line">        android:state_enabled=["true" | "false"]</div><div class="line">        android:state_activated=["true" | "false"]</div><div class="line">        android:state_window_focused=["true" | "false"] /&gt;</div><div class="line">&lt;/selector&gt;</div><div class="line"></div><div class="line">1:十种状态</div><div class="line">  pressed、focused、hovered、selected、checkable、checked、enabled、activated、window_focused、default</div><div class="line">2：匹配顺序</div><div class="line">   根据当前对象状态，在selector集合中从上到下匹配，被匹配到的第一项&lt;item&gt;作为对象的背景色</div><div class="line">3：注意点 </div><div class="line"> 3.1：根据从上到下进行匹配时，只要能匹配上，则结束匹配，然而每一个View对象都有默认状态，所以这也就是为什么默认状态不能放在开头，而要放到最后的原因。</div><div class="line"> 3.2：不是所有的View子类都拥有所有的状态，比如Button对象，拥有pressed、enabled、window_focused、default四种状态，如果设置selected是无效的，所以要根据组件的具体情况设置。</div><div class="line"> 3.3：状态的顺序排放</div><div class="line">pressed-&gt;focused-&gt;selected-&gt;checkable-&gt;checked-&gt;enabled-&gt;window_focused-&gt;default</div><div class="line">具体排放顺序还得根据当前View对象拥有的状态来排列。记住默认的权重是最大的，要放在最后面。</div></pre></td></tr></table></figure>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">https://developer.android.com/guide/topics/resources/drawable-resource.html?hl=zh-cn#Shape  </div><div class="line"></div><div class="line">shape ：http://www.jianshu.com/p/ef734937b521</div><div class="line">        http://keeganlee.me/post/android/20150830</div><div class="line"></div><div class="line">selector：http://www.jianshu.com/p/939a6d5760d8</div><div class="line"></div><div class="line">封装selector：https://github.com/niniloveyou/StateButton/blob/master/README_CHINESE.md</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/AS-初始配置，提升速率/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/22/AS-初始配置，提升速率/" itemprop="url">
+                  AS-初始配置，提升速率
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T14:21:32+08:00">
+                2017-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AS/" itemprop="url" rel="index">
+                    <span itemprop="name">AS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="设置文件缓存位置"><a href="#设置文件缓存位置" class="headerlink" title="设置文件缓存位置"></a>设置文件缓存位置</h4><p>进入bin找到idea.properties将idea.config.path和idea.system.path更改，设置为自己想要缓存的路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">---------------------------------------------------------------------</div><div class="line"></div><div class="line">Uncomment this option if you want to customize path to IDE config folder. Make sure you&apos;re using forward slashes.</div><div class="line"></div><div class="line">---------------------------------------------------------------------</div><div class="line"></div><div class="line">idea.config.path=D:/AS/.AndroidStudio/config</div><div class="line"></div><div class="line">---------------------------------------------------------------------</div><div class="line"></div><div class="line">Uncomment this option if you want to customize path to IDE system folder. Make sure you&apos;re using forward slashes.</div><div class="line"></div><div class="line">---------------------------------------------------------------------</div><div class="line"></div><div class="line">idea.system.path=D:/AS/.AndroidStudio/system</div><div class="line"></div><div class="line">---------------------------------------------------------------------</div><div class="line"></div><div class="line">Uncomment this option if you want to customize path to user installed plugins folder. Make sure you&apos;re using forward slashes.</div><div class="line"></div><div class="line">---------------------------------------------------------------------</div><div class="line"></div><div class="line">idea.plugins.path=$&#123;idea.config.path&#125;/plugins</div><div class="line"></div><div class="line">---------------------------------------------------------------------</div><div class="line"></div><div class="line">Uncomment this option if you want to customize path to IDE logs folder. Make sure you&apos;re using forward slashes.</div><div class="line"></div><div class="line">---------------------------------------------------------------------</div><div class="line"></div><div class="line">idea.log.path=$&#123;idea.system.path&#125;/log</div></pre></td></tr></table></figure>
+<h4 id="设置JDK、SDK"><a href="#设置JDK、SDK" class="headerlink" title="设置JDK、SDK"></a>设置JDK、SDK</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">欢迎界面 Configure --&gt; Project Defaults --&gt;Project Structure</div><div class="line"></div><div class="line">已启动页面 File --&gt; Project Structure</div></pre></td></tr></table></figure>
+<h4 id="设置Gradle离线版本"><a href="#设置Gradle离线版本" class="headerlink" title="设置Gradle离线版本"></a>设置Gradle离线版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">由于Android Studio没有自带Gradle，所以新建项目时会自动下载Gradle,但由于被墙，国内几乎下载不下来，所以第一次新建项目一般就会卡在Gradle构建上，此时我们可以使用离线安装</div><div class="line"></div><div class="line">第一次新建项目卡在Gradle构建上时，就将Android Studio强制关闭，此时会在c:\Users\用户名 文件夹下生成一个.gradle文件夹，层层打开就会看到下载的gradle的版本号，此时需要到Gradle 官网上选择对应版本进行下载 将下载好的压缩包放置在对应位置即可</div><div class="line"></div><div class="line">1：官网下载对应版本的zip_all包</div><div class="line">2：将压缩包放置在随机数字的文件中，且不解压</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/常见问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/22/常见问题/" itemprop="url">
+                  常见问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T10:24:07+08:00">
+                2017-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/AS-常用快捷键/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/22/AS-常用快捷键/" itemprop="url">
+                  AS-常用快捷键
                 </a>
               
             
@@ -433,7 +855,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/常用插件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/AS-常用插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Queen·me">
@@ -455,8 +877,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/06/22/常用插件/" itemprop="url">
-                  常用插件
+                <a class="post-title-link" href="/2017/06/22/AS-常用插件/" itemprop="url">
+                  AS-常用插件
                 </a>
               
             
@@ -581,7 +1003,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/常用设置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/AS-常用设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Queen·me">
@@ -603,8 +1025,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/06/22/常用设置/" itemprop="url">
-                  常用设置
+                <a class="post-title-link" href="/2017/06/22/AS-常用设置/" itemprop="url">
+                  AS-常用设置
                 </a>
               
             
@@ -733,7 +1155,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/导入项目/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/AS-导入项目/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Queen·me">
@@ -755,8 +1177,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/06/20/导入项目/" itemprop="url">
-                  导入项目
+                <a class="post-title-link" href="/2017/06/20/AS-导入项目/" itemprop="url">
+                  AS-导入项目
                 </a>
               
             
@@ -1296,312 +1718,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/03/Hexo+GithubPage搭建属于自己的博客（二）-设置分类，多级分类/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/03/Hexo+GithubPage搭建属于自己的博客（二）-设置分类，多级分类/" itemprop="url">
-                  Hexo+GithubPage搭建属于自己的博客（二）--设置分类，多级分类
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T18:06:14+08:00">
-                2017-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="Hexo-GithubPage搭建属于自己的博客（二）–设置分类"><a href="#Hexo-GithubPage搭建属于自己的博客（二）–设置分类" class="headerlink" title="Hexo+GithubPage搭建属于自己的博客（二）–设置分类"></a>Hexo+GithubPage搭建属于自己的博客（二）–设置分类</h4><h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">主题为next</div></pre></td></tr></table></figure>
-<h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><h5 id="设置分类索引页"><a href="#设置分类索引页" class="headerlink" title="设置分类索引页"></a>设置分类索引页</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">1.1：在Git Bash命令行中执行命令，命令执行后会在博客对应的source文件夹下建立categories文件，并生成index.md</div><div class="line">hexo new page categories</div><div class="line">1.2：编辑index.md,设置type为&quot;categories&quot;</div><div class="line">     title: 分类</div><div class="line">     date: 2017-05-03 16:46:16</div><div class="line">     type: &quot;categories&quot;</div><div class="line">1.3：在菜单中添加链接</div><div class="line">     打开主题配置_config.yml,设置categories</div><div class="line">     menu:</div><div class="line">       home: /</div><div class="line">       categories: /categories</div><div class="line">       about: /about</div><div class="line">       archives: /archives</div><div class="line">       tags: /tags</div><div class="line">       sitemap: /sitemap.xml</div><div class="line">       commonweal: /404.html</div><div class="line">        </div><div class="line">     此时分类页面索引页就设置完成了，但是分类页面还没有任何内容</div></pre></td></tr></table></figure>
-<h5 id="设置文章分类"><a href="#设置文章分类" class="headerlink" title="设置文章分类"></a>设置文章分类</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1.1：当你新建一篇文章时，hexo会自动在头部添加如下格式内容，你只需要设置categories为你想要设置的分类即可</div><div class="line">  </div><div class="line">  title: Hexo+GithubPage搭建属于自己的博客（二）--设置分类</div><div class="line">  date: 2017-05-03 18:06:14</div><div class="line">  tags:</div><div class="line">  categories: Hexo</div><div class="line">  </div><div class="line">1.2：通过发布部署，瞧一瞧分类中是否已经有分类了</div></pre></td></tr></table></figure>
-<h5 id="设置多级分类"><a href="#设置多级分类" class="headerlink" title="设置多级分类"></a>设置多级分类</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: Hexo+GithubPage搭建属于自己的博客（二）--设置分类</div><div class="line">date: 2017-05-03 18:06:14</div><div class="line">tags:</div><div class="line">categories: [Hexo ,设置]</div><div class="line"></div><div class="line">使用中括号“[] ”包裹分类，各级分类以“,” 逗号分割</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/03/Hexo+GithubPage搭建属于自己的博客（一）--Hexo安装部署及发布/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/03/Hexo+GithubPage搭建属于自己的博客（一）--Hexo安装部署及发布/" itemprop="url">
-                  Hexo+GithubPage搭建属于自己的博客（一）--Hexo安装部署及发布
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T15:19:23+08:00">
-                2017-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Hexo-Github-Page搭建属于自己的博客（一）–Hexo安装部署及发布"><a href="#Hexo-Github-Page搭建属于自己的博客（一）–Hexo安装部署及发布" class="headerlink" title="Hexo+Github Page搭建属于自己的博客（一）–Hexo安装部署及发布"></a>Hexo+Github Page搭建属于自己的博客（一）–Hexo安装部署及发布</h3><h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">在正式搭建博客前，要注意相关软件的版本，不同的版本设置差异比较大，如下为我的版本信息</div><div class="line"></div><div class="line">$ hexo -v</div><div class="line">hexo: 3.3.5</div><div class="line">hexo-cli: 1.0.2</div><div class="line">os: Windows_NT 10.0.14393 win32 x64</div><div class="line">http_parser: 2.7.0</div><div class="line">node: 6.10.2</div><div class="line">v8: 5.1.281.98</div><div class="line">uv: 1.9.1</div><div class="line">zlib: 1.2.11</div><div class="line">ares: 1.10.1-DEV</div><div class="line">icu: 58.2</div><div class="line">modules: 48</div><div class="line">openssl: 1.0.2k</div></pre></td></tr></table></figure>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h5 id="第一步：准备相关软件"><a href="#第一步：准备相关软件" class="headerlink" title="第一步：准备相关软件"></a>第一步：准备相关软件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Node.js:</div><div class="line">https://nodejs.org/zh-cn/</div><div class="line"></div><div class="line">Git:https://git-scm.com/ 官方地址，但是始终下载不下来，推荐网盘地址：</div><div class="line">http://pan.baidu.com/s/1kULbl59</div><div class="line"></div><div class="line">下载以上软件之后，一直Next安装即可</div></pre></td></tr></table></figure>
-<h5 id="第二步：安装Hexo"><a href="#第二步：安装Hexo" class="headerlink" title="第二步：安装Hexo"></a>第二步：安装Hexo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">2.1：新建一个空文件夹用于承载Hexo博客相关 例如：我在D盘新建HexoBlog文件夹</div><div class="line">2.2：进入此文件夹，右击选择Git Bash Here</div><div class="line">2.3：在Git Bash命令行中，运行npm install hexo-cli -g</div><div class="line">2.3：在Git Bash命令行中，运行npm install hexo --save</div></pre></td></tr></table></figure>
-<h5 id="第三步：初始化Hexo"><a href="#第三步：初始化Hexo" class="headerlink" title="第三步：初始化Hexo"></a>第三步：初始化Hexo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">同样在Git Bash命令行窗口中：命令行进入到你之前新建承载博客的文件夹的盘符下，例如我的是D盘</div><div class="line">3.1：命令行中进入D：盘</div><div class="line">3.2：运行hexo init HexoBlog</div><div class="line">3.3：cd HexoBlog</div><div class="line">3.4：npm install</div></pre></td></tr></table></figure>
-<h5 id="第四步：设置Github"><a href="#第四步：设置Github" class="headerlink" title="第四步：设置Github"></a>第四步：设置Github</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">4.1：注册Github账户</div><div class="line">4.2：新建仓库，名称为：用户名.github.io(注意：这个是固定格式，必须这样定义)</div><div class="line">4.2：在仓库的Settings选项卡下，找到GitHub Pages</div><div class="line">4.3：点击Automatic page generator开启GitHub Pages功能</div><div class="line">4.4：稍等一会，在浏览器中输入：用户名.github.io 验证配置是否正确，如果可以正常访问，则配置正确</div></pre></td></tr></table></figure>
-<h5 id="第五步：设置Hexo"><a href="#第五步：设置Hexo" class="headerlink" title="第五步：设置Hexo"></a>第五步：设置Hexo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">打开站点配置文件：位于最外层的_config.yml</div><div class="line">其中你可以简单设置博客的标题，子标题，简介，语言，时区等</div></pre></td></tr></table></figure>
-<h5 id="第六步：设置主题"><a href="#第六步：设置主题" class="headerlink" title="第六步：设置主题"></a>第六步：设置主题</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">7.1：下载主题，这里以next主题为例，到next官网上下载，这里下载zip资源</div><div class="line">7.2：解压主题资源，并修改文件夹名称为next，放置在themes目录下</div><div class="line">7.3：打开站点配置文件：_config.yml,修改theme: next</div><div class="line">7.4：设置主题相关配置，参考next官网 http://theme-next.iissnan.com/getting-started.html</div></pre></td></tr></table></figure>
-<h5 id="第七步：设置发布"><a href="#第七步：设置发布" class="headerlink" title="第七步：设置发布"></a>第七步：设置发布</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">7.1：在Git Bash 命令行中安装插件</div><div class="line">     使用命令：npm install hexo-deployer-git --save</div><div class="line">7.2:     </div><div class="line">打开站点配置文件：位于最外层的_config.yml</div><div class="line">找到deploy，进行如下设置</div><div class="line">deploy:</div><div class="line">   type: git</div><div class="line">   repo: https://github.com/用户名/用户名.github.io(仓库的地址)</div><div class="line">   branch: master</div></pre></td></tr></table></figure>
-<h5 id="第八步：验证"><a href="#第八步：验证" class="headerlink" title="第八步：验证"></a>第八步：验证</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">如上设置都完成后，在浏览器中输入：用户名.github.io</div></pre></td></tr></table></figure>
-<h4 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">1：资源下载不了</div><div class="line">  在使用命令行下载Hexo相关资源时，可能是网络原因，一直停留在拉取数据，建议停止下载，稍后在下载</div><div class="line">2：使用Hexo 命令时提示：</div><div class="line">   ERROR Local hexo not found in D:\HexoBlog</div><div class="line">   ERROR Try running: &apos;npm install hexo --save&apos;</div><div class="line"> </div><div class="line">   解决方案：按照他的提示 执行了命令：npm install hexo --save 发现不管用，我这边的原因是，我在安装Hexo时同时也在使用360杀毒程序，360杀毒软件给我删除了一些文件，导致hexo 不能使用，也是醉了，后来通过隔离区恢复才可以正常使用</div><div class="line">C:\Users\lly\AppData\Roaming\npm\node_modules\hexo-cli\node_modules\html-entities\lib\html5-entities.js	virus.js.qexvmc.1065	已删除</div><div class="line">D:\$RECYCLE.BIN\S-1-5-21-139751887-829851224-1641076984-1001\$RKC7GYY\html-entities\lib\html5-entities.js	virus.js.qexvmc.1065	已删除</div><div class="line">D:\HexoBlog\node_modules\html-entities\lib\html5-entities.js	virus.js.qexvmc.1065	已删除</div><div class="line">D:\node_modules\html-entities\lib\html5-entities.js	virus.js.qexvmc.1065	已删除</div><div class="line"></div><div class="line"></div><div class="line">   </div><div class="line">3：发布时出现错误</div><div class="line"> Host key verification failed.</div><div class="line"></div><div class="line"> fatal: Could not read from remote repository.</div><div class="line"></div><div class="line"> Please make sure you have the correct access rights</div><div class="line"></div><div class="line"> and the repository exists.</div><div class="line"></div><div class="line"> FATAL Something&apos;s wrong. Maybe you can find the solution here:      http://hexo.io/docs/troubleshooting.html</div><div class="line"></div><div class="line">Error: Host key verification failed.</div><div class="line"></div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line"></div><div class="line">and the repository exists.</div><div class="line"></div><div class="line">    at ChildProcess.&lt;anonymous&gt; (D:\HexoBlog\node_modules\hexo-util\lib\spawn.js:37:17)</div><div class="line">    at emitTwo (events.js:106:13)</div><div class="line">    at ChildProcess.emit (events.js:191:7)</div><div class="line">    at ChildProcess.cp.emit (D:\HexoBlog\node_modules\cross-spawn\lib\enoent.js:40:29)</div><div class="line">    at maybeClose (internal/child_process.js:886:16)</div><div class="line">    at Socket.&lt;anonymous&gt; (internal/child_process.js:342:11)</div><div class="line">    at emitOne (events.js:96:13)</div><div class="line">    at Socket.emit (events.js:188:7)</div><div class="line">    at Pipe._handle.close [as _onclose] (net.js:501:12)</div><div class="line"></div><div class="line">解决方案：deploye repo设置错误，参照网上的文章刚开始设置repo为：git@github.com:llydream/llydream.github.io.git  之后将repo设置：https://github.com/llydream/llydream.github.io 即可，这个主要原因应该是应为hexo版本的原因</div><div class="line"></div><div class="line">4：在设置时，总是出现YAML 解析Error</div><div class="line">   检验YML语法有效性： http://www.yamllint.com/</div></pre></td></tr></table></figure>
-<h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/index.html</a></p>
-<p><a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="external">https://xuanwo.org/2015/03/26/hexo-intor/</a></p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">http://theme-next.iissnan.com/getting-started.html</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1646,7 +1767,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1657,7 +1778,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

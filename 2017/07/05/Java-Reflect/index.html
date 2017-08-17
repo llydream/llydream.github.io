@@ -1,0 +1,745 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="定义12345反射机制是指在运行状态中，    对于任意一个类能够获取其所有的属性和方法；    对于任意一个对象能够调用其所有属性和方法；    这种在运行状态中动态获取类属性和方法，以及动态调用对象的属性和方法的功能称为java语言的反射机制    通俗来说：反射就是可以实现在运行状态时获取任意一个类的属性和方法，也能调用任意一个对象的属性和方法 优缺点123456使用反射最大的优点是提高程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java-Reflect">
+<meta property="og:url" content="http://yoursite.com/2017/07/05/Java-Reflect/index.html">
+<meta property="og:site_name" content="Queen·me">
+<meta property="og:description" content="定义12345反射机制是指在运行状态中，    对于任意一个类能够获取其所有的属性和方法；    对于任意一个对象能够调用其所有属性和方法；    这种在运行状态中动态获取类属性和方法，以及动态调用对象的属性和方法的功能称为java语言的反射机制    通俗来说：反射就是可以实现在运行状态时获取任意一个类的属性和方法，也能调用任意一个对象的属性和方法 优缺点123456使用反射最大的优点是提高程序">
+<meta property="og:updated_time" content="2017-08-17T01:48:34.515Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java-Reflect">
+<meta name="twitter:description" content="定义12345反射机制是指在运行状态中，    对于任意一个类能够获取其所有的属性和方法；    对于任意一个对象能够调用其所有属性和方法；    这种在运行状态中动态获取类属性和方法，以及动态调用对象的属性和方法的功能称为java语言的反射机制    通俗来说：反射就是可以实现在运行状态时获取任意一个类的属性和方法，也能调用任意一个对象的属性和方法 优缺点123456使用反射最大的优点是提高程序">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/05/Java-Reflect/"/>
+
+
+
+
+
+  <title> Java-Reflect | Queen·me </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Queen·me</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/Java-Reflect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java-Reflect
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T16:12:56+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">反射机制是指在运行状态中，</div><div class="line">    对于任意一个类能够获取其所有的属性和方法；</div><div class="line">    对于任意一个对象能够调用其所有属性和方法；</div><div class="line">    这种在运行状态中动态获取类属性和方法，以及动态调用对象的属性和方法的功能称为java语言的反射机制</div><div class="line">    通俗来说：反射就是可以实现在运行状态时获取任意一个类的属性和方法，也能调用任意一个对象的属性和方法</div></pre></td></tr></table></figure>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">使用反射最大的优点是提高程序灵活性，最大的缺点是降低系统性能</div><div class="line">为什么会提高程序灵活性，这里需要了解两个概念：静态加载，动态加载</div><div class="line">静态加载：在编译时期就确定类型，绑定对象</div><div class="line">         例如：Person person=<span class="keyword">new</span> Person();</div><div class="line">动态加载：在运行时期才确定类型，绑定对象</div><div class="line">         例如：根据反射获取类类型，通过newInstance绑定对象</div></pre></td></tr></table></figure>
+<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><h6 id="Class类和类类型"><a href="#Class类和类类型" class="headerlink" title="Class类和类类型"></a>Class类和类类型</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">类是java.lang.Class类的实例对象，而Class是所有类的类,获取类对象的三种方式：</div><div class="line">第一种：</div><div class="line">   Class c1=Person.class</div><div class="line">   这种方式是通过获取类的静态成员变量<span class="class"><span class="keyword">class</span>而获取的，说明对于任意类都有一个隐含的静态成员变量<span class="title">class</span></span></div><div class="line">第二种：</div><div class="line">    <span class="title">Person</span> <span class="title">p1</span>=<span class="keyword">new</span> Person();</div><div class="line">    Class c2=p1.getClass();</div><div class="line">    这种方式是通过调用一个类的对象的getClass()而获取</div><div class="line">第三种：</div><div class="line">    Class c3=Class.forName(com.queen.me.Person);</div><div class="line">    这种方式是Class类通过调用forName方法，传递一个类的全路径而获取</div></pre></td></tr></table></figure>
+<h6 id="获取成员方法"><a href="#获取成员方法" class="headerlink" title="获取成员方法"></a>获取成员方法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//得到该类所有定义的方法(private,protectd,public,default)，不包括父类的方法</span></div><div class="line"><span class="keyword">public</span> Method[] getDeclaredMethods();</div><div class="line"><span class="comment">//得到该类中指定名称方法，不包括父类</span></div><div class="line"><span class="function"><span class="keyword">public</span> Method <span class="title">getDeclaredMethod</span><span class="params">(String name,Class&lt;?&gt;... parameterTypes)</span></span>;</div><div class="line"><span class="comment">//得到该类所有的public方法，包括父类的public方法</span></div><div class="line"><span class="keyword">public</span> Method[] getMethods();</div><div class="line"><span class="comment">//得到该类中指定名称的public方法，包括父类的public方法</span></div><div class="line"><span class="function"><span class="keyword">public</span> Method <span class="title">getMethod</span><span class="params">(String name,Class&lt;?&gt;... parameterTypes)</span></span>;</div><div class="line"></div><div class="line">参数：</div><div class="line">name： 方法名称</div><div class="line">parameterTypes：参数类类型</div><div class="line"></div><div class="line">例如：</div><div class="line">Person类有一个方法：</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</div><div class="line">  <span class="keyword">this</span>.name=name;</div><div class="line">&#125;</div><div class="line">那么如何获取这个方法呢？</div><div class="line">Class c1=Person.getClass();</div><div class="line">Method setNameMethod=c1.getDeclaredMethod(<span class="string">"setName"</span>,String.class);</div><div class="line">System.out.println(Method.getName);</div><div class="line"></div><div class="line">调用此方法修改值：</div><div class="line">    要进行修改动作，根据Class获取不同，方法调用不同</div><div class="line">一：Class是通过对象方式得到：</div><div class="line">     Person person=<span class="keyword">new</span> Person();</div><div class="line">     person.setName(<span class="string">"李四"</span>);</div><div class="line">     Class c1=person.getClass();</div><div class="line">那么修改值则通过一下形式修改</div><div class="line">     setNameMethod.invoke(<span class="string">"张三"</span>);</div><div class="line">此时，p1的姓名修改为了张三</div><div class="line"></div><div class="line">二：Class通过类静态变量和forName全路径得到的</div><div class="line">     Class c1=Person.class;</div><div class="line">     或者 </div><div class="line">     Class c1=Class.forName(<span class="string">"com.queen.me.Person"</span>);</div><div class="line">那么修改值则需要指定修改对象，</div><div class="line">      Person p=<span class="keyword">new</span> Person();</div><div class="line">      p.setName(<span class="string">"李四"</span>);</div><div class="line">      setNameMethod.invoke(p,<span class="string">"zhangsan"</span>);</div><div class="line">此时，p的姓名修改为了张三</div><div class="line"></div><div class="line">注意：如果方法权限为<span class="keyword">private</span>，则需要设置，其他权限不需要设置</div><div class="line">     setNameMethod.setAccessible(<span class="keyword">true</span>);</div></pre></td></tr></table></figure>
+<h6 id="获取成员变量"><a href="#获取成员变量" class="headerlink" title="获取成员变量"></a>获取成员变量</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//得到该类所有定义的成员变量(private,protected,public,default)，不包括父类的</span></div><div class="line"><span class="keyword">public</span> Field[] getDeclaredFields();</div><div class="line"><span class="comment">//得到该类指定名称变量，不包括父类的</span></div><div class="line"><span class="function"><span class="keyword">public</span> Field <span class="title">getDeclaredFiled</span><span class="params">(String name)</span></span>;</div><div class="line"><span class="comment">//得到该类所有public成员变量，包括父类的public成员变量</span></div><div class="line"><span class="keyword">public</span> Field[] getFields();</div><div class="line"><span class="comment">//得到该类指定名称public变量，包括父类的public成员变量</span></div><div class="line"><span class="function"><span class="keyword">public</span> Field <span class="title">getField</span><span class="params">(String name)</span></span>;</div><div class="line"></div><div class="line">参数：</div><div class="line">name：变量名称</div><div class="line"></div><div class="line">例如：</div><div class="line">Person类有一个成员变量：</div><div class="line"><span class="keyword">private</span> String name；</div><div class="line">那么如何获取这个成员变量呢？</div><div class="line">Class c1=Person.class;</div><div class="line">Field nameField=c1.getDeclaredField(<span class="string">"name"</span>);</div><div class="line">System.out.println(nameField.getName);</div><div class="line"></div><div class="line">如何修改此成员变量值呢？</div><div class="line">与修改成员方法规则一样，根据Class获取形式不同，修改不同</div><div class="line">一：Class是通过对象方式得到：</div><div class="line">     Person person=<span class="keyword">new</span> Person();</div><div class="line">     person.setName(<span class="string">"李四"</span>);</div><div class="line">     Class c1=person.getClass();</div><div class="line">那么修改值则通过一下形式修改</div><div class="line">     nameField.set(person,<span class="string">"张三"</span>);</div><div class="line"></div><div class="line">二：Class通过类静态变量和forName全路径得到的</div><div class="line">     Class c1=Person.class;</div><div class="line">     或者 </div><div class="line">     Class c1=Class.forName(<span class="string">"com.queen.me.Person"</span>);</div><div class="line">那么修改值则需要指定修改对象，</div><div class="line">      Person p=<span class="keyword">new</span> Person();</div><div class="line">      p.setName(<span class="string">"李四"</span>);</div><div class="line">      nameField.set(person,<span class="string">"张三"</span>);</div><div class="line">注意：如果方法权限为<span class="keyword">private</span>，则需要设置，其他权限不需要设置</div><div class="line">     nameField.setAccessible(<span class="keyword">true</span>);</div></pre></td></tr></table></figure>
+<h6 id="获取构造函数"><a href="#获取构造函数" class="headerlink" title="获取构造函数"></a>获取构造函数</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//得到该类所有定义的构造函数(private,protected,public,default)</span></div><div class="line"><span class="keyword">public</span> Constructor&lt;?&gt;[] getDeclaredConstructors()</div><div class="line"><span class="comment">//得到该类指定构造函数</span></div><div class="line"><span class="function"><span class="keyword">public</span> Constructor&lt;T&gt; <span class="title">getDeclaredConstructor</span><span class="params">(Class&lt;?&gt;... parameterTypes)</span></span>;</div><div class="line"><span class="comment">//得到该类所有public构造函数</span></div><div class="line"><span class="keyword">public</span> Constructor&lt;?&gt;[] getConstructors();</div><div class="line"><span class="comment">//得到该类指定的public构造函数</span></div><div class="line"><span class="function"><span class="keyword">public</span> Constructor&lt;T&gt; <span class="title">getConstructor</span><span class="params">(Class&lt;?&gt;... parameterTypes)</span></span>;</div><div class="line"></div><div class="line">参数：</div><div class="line">parameterTypes：参数类类型</div><div class="line"></div><div class="line">例如：</div><div class="line">Person类中的构造函数是：</div><div class="line"><span class="keyword">private</span> String name;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span></span>&#123;</div><div class="line">  <span class="keyword">this</span>.name=name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">那么如何获取构造函数呢？</div><div class="line">一：默认构造函数</div><div class="line">Class c1=Person.class;</div><div class="line">Constructor constructor1=c1.newInstance(); </div><div class="line">注意：Class的newInstance方法，只能创建无参数的构造函数</div><div class="line"></div><div class="line">或者</div><div class="line"></div><div class="line">Person p=<span class="keyword">new</span> Person();</div><div class="line">Class c1=Person.class;</div><div class="line">Constructor constructor2=p.newInstance()</div><div class="line"></div><div class="line">二：带参构造函数</div><div class="line">Person p=<span class="keyword">new</span> Person();</div><div class="line">Class c1=Person.class;</div><div class="line"></div><div class="line">Constructor&lt;?&gt;[] parameterTyper=<span class="keyword">new</span> Constructor&lt;?&gt;[<span class="number">1</span>];</div><div class="line">parameterType[<span class="number">0</span>]=String.class;</div><div class="line"></div><div class="line">Constructor constructor1=c1.newInstance(parameterTyper);</div><div class="line"></div><div class="line">Object[] valueObj=<span class="keyword">new</span> Object[<span class="number">1</span>];</div><div class="line">valueObj[<span class="number">0</span>]=<span class="string">"张三"</span>;</div><div class="line"></div><div class="line">Object obj=constructor.newInstance(valueObj);</div></pre></td></tr></table></figure>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">动态修改属性值，动态调用方法，动态创建对象</div></pre></td></tr></table></figure>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p>反射基础知识</p>
+<p><a href="http://www.jianshu.com/p/f67182a482eb" target="_blank" rel="external">http://www.jianshu.com/p/f67182a482eb</a></p>
+<p>反射基本应用</p>
+<p><a href="http://blog.csdn.net/shenyunsese/article/details/11737179" target="_blank" rel="external">http://blog.csdn.net/shenyunsese/article/details/11737179</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/05/Android-LinearLayout/" rel="next" title="Android-LinearLayout">
+                <i class="fa fa-chevron-left"></i> Android-LinearLayout
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/05/Java-Annotation/" rel="prev" title="Java-Annotation">
+                Java-Annotation <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Queen·me" />
+          <p class="site-author-name" itemprop="name">Queen·me</p>
+           
+              <p class="site-description motion-element" itemprop="description">Easy Life，Easy Self</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优缺点"><span class="nav-number">2.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API"><span class="nav-number">3.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Class类和类类型"><span class="nav-number">3.0.1.</span> <span class="nav-text">Class类和类类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取成员方法"><span class="nav-number">3.0.2.</span> <span class="nav-text">获取成员方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取成员变量"><span class="nav-number">3.0.3.</span> <span class="nav-text">获取成员变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取构造函数"><span class="nav-number">3.0.4.</span> <span class="nav-text">获取构造函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用"><span class="nav-number">4.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文章"><span class="nav-number">5.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Queen·me</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
