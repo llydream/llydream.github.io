@@ -290,6 +290,163 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/Android-TextView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/30/Android-TextView/" itemprop="url">
+                  Android-TextView
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T14:54:19+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Anroid基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Anroid基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Anroid基础知识/Android-API/" itemprop="url" rel="index">
+                    <span itemprop="name">Android API</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1：xml-drawableTop对应代码"><a href="#1：xml-drawableTop对应代码" class="headerlink" title="1：xml drawableTop对应代码"></a>1：xml drawableTop对应代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setCompoundDrawablesWithIntrinsicBounds(leftDrawable,topDrawable,rightDrawable,bottomDrawable)</div></pre></td></tr></table></figure>
+<h4 id="2：代码中设置setTextColor-使用int-color-不能直接写-000000"><a href="#2：代码中设置setTextColor-使用int-color-不能直接写-000000" class="headerlink" title="2：代码中设置setTextColor 使用int color 不能直接写#000000"></a>2：代码中设置setTextColor 使用int color 不能直接写#000000</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">正确设置：tv.setTextColor(Color.parseColor(&quot;#000000&quot;));</div></pre></td></tr></table></figure>
+<h4 id="3：-部分文字特殊显示"><a href="#3：-部分文字特殊显示" class="headerlink" title="3： 部分文字特殊显示"></a>3： 部分文字特殊显示</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//***********************************部分文字特殊显示**************************************</div><div class="line">//方式一：代码中直接设置</div><div class="line">tv1.setText(Html.fromHtml("方式一：&lt;br&gt;我来自&lt;font color='#ff0000'&gt;&lt;big&gt;中国&lt;/big&gt;&lt;/font&gt;"));</div><div class="line"></div><div class="line">//方式二：string.xml 转义Html标签  左括号==&amp;lt; 右括号==&amp;gt; 单引号和双引号要通过"\"反斜杠进行转义</div><div class="line">tv2.setText(Html.fromHtml("方式二：&lt;br&gt;"+getResources().getString(R.string.show_t2)));</div><div class="line"></div><div class="line">//方式三：string.xml &lt;![CDATA[]]&gt;标签</div><div class="line">tv3.setText(Html.fromHtml("方式三：&lt;br&gt;"+getResources().getString(R.string.show_t3)));</div><div class="line"></div><div class="line">//***********************************字符串中带格式参数*************************************</div><div class="line">// %d （表示整数） %f（表示浮点数） %s（表示字符串）%c （表示字符）</div><div class="line">//字符串带格式参数 %s</div><div class="line"> tv4.setText("字符串带格式参数：\n"+getString(R.string.show_t4,"中国"));</div><div class="line">//字符串带多个格式参数 %1$s</div><div class="line">  tv5.setText("字符串带多个格式参数：\n"+getString(R.string.show_t5,"中国","27"));</div><div class="line">//字符串带格式参数且特殊样式显示</div><div class="line">tv6.setText(Html.fromHtml("字符串带格式参数且特殊样式显示：&lt;br&gt;"+getResources().getString(R.string.show_t6,"中国")));</div><div class="line"></div><div class="line">//************************************strings.xml*****************************************</div><div class="line">&lt;string name="show_t2"&gt;我来自&amp;lt;font color=\"#00ff00\"&amp;gt;&amp;lt;big&amp;gt;中国&amp;lt;/big&amp;gt;&amp;lt;/font&amp;gt;&lt;/string&gt;</div><div class="line">&lt;string name="show_t3"&gt;我来自&lt;![CDATA[&lt;font color="#0000ff"&gt;&lt;big&gt;中国&lt;/big&gt;&lt;/font&gt;]]&gt;&lt;/string&gt;</div><div class="line">&lt;string name="show_t4"&gt;我来自%s&lt;/string&gt;</div><div class="line">&lt;string name="show_t5"&gt;我来自%1$s,今年%2$s岁&lt;/string&gt;</div><div class="line">&lt;string name="show_t6"&gt;我来自&lt;![CDATA[&lt;font color="#ffff00"&gt;&lt;big&gt;%s&lt;/big&gt;&lt;/font&gt;]]&gt;&lt;/string&gt;</div><div class="line">  </div><div class="line">//***************************************注意事项******************************************</div><div class="line">  textview中支持的html标签有限，其中font标签中不支持size标签，一般文字大小使用big，small标签，且这些标签可以嵌套，比如&lt;big&gt;&lt;big&gt;中国&lt;/big&gt;&lt;/big&gt;，此时“中国”会放大两倍</div></pre></td></tr></table></figure>
+<p><img src="D:\HexoBlog\source\images\android_textview.png" width="540" height="960"></p>
+<h4 id="富文本"><a href="#富文本" class="headerlink" title="富文本"></a>富文本</h4><h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a><xliff:g>标签</xliff:g></h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/Android-shape和selector/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1570,154 +1727,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/16/技术网站/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/16/技术网站/" itemprop="url">
-                  技术网站
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T14:52:20+08:00">
-                2017-06-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Android官方学习网站"><a href="#Android官方学习网站" class="headerlink" title="Android官方学习网站"></a>Android官方学习网站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1：博客学习</div><div class="line"></div><div class="line">https://android-developers.googleblog.com/2017/</div><div class="line"></div><div class="line">2：API</div><div class="line"></div><div class="line">https://developer.android.google.cn/index.html  中文</div><div class="line"></div><div class="line">https://developer.android.com/index.html 英文</div></pre></td></tr></table></figure>
-<h3 id="技术网站"><a href="#技术网站" class="headerlink" title="技术网站"></a>技术网站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1：掘金</div><div class="line"></div><div class="line">   https://juejin.im/   </div><div class="line"></div><div class="line">   纯技术网站</div><div class="line"></div><div class="line">2：简书</div><div class="line"></div><div class="line">   http://www.jianshu.com/</div><div class="line"></div><div class="line">   文章质量很高，但是不是纯技术的</div><div class="line"></div><div class="line">3：泡在网上的日子</div><div class="line"></div><div class="line">   http://www.jcodecraeer.com/</div><div class="line"></div><div class="line">   技术网站</div></pre></td></tr></table></figure>
-<h3 id="个人网站推荐"><a href="#个人网站推荐" class="headerlink" title="个人网站推荐"></a>个人网站推荐</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">1：技术小黑屋</div><div class="line"></div><div class="line">  http://droidyue.com/</div><div class="line"></div><div class="line">  文章质量高</div><div class="line"></div><div class="line">2：Trinea</div><div class="line"></div><div class="line"> http://www.trinea.cn/</div><div class="line"></div><div class="line">  开源项目</div><div class="line"></div><div class="line">3：stormzhang</div><div class="line"></div><div class="line">http://stormzhang.com/</div><div class="line"></div><div class="line">目前网络比较火的Android开发人员</div><div class="line"></div><div class="line">4：</div><div class="line">http://cmsblogs.com/</div><div class="line">Java基础夯实</div></pre></td></tr></table></figure>
-<h3 id="问答社区"><a href="#问答社区" class="headerlink" title="问答社区"></a>问答社区</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1：stackoverflow</div><div class="line"></div><div class="line">https://stackoverflow.com/</div><div class="line"></div><div class="line">stackoverflow不用提了  全球闻名问答社区</div></pre></td></tr></table></figure>
-<h3 id="工具类网站"><a href="#工具类网站" class="headerlink" title="工具类网站"></a>工具类网站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">1：Android工具网站</div><div class="line"></div><div class="line">http://www.androiddevtools.cn/</div><div class="line"></div><div class="line">超全面的Android开发工具网站</div><div class="line"></div><div class="line">2：Json</div><div class="line"></div><div class="line">http://www.sojson.com/yasuo.html</div><div class="line"></div><div class="line">功能很全面的网站</div><div class="line"></div><div class="line">3：RGB与16位数颜色转化网站</div><div class="line"></div><div class="line">http://www.sioe.cn/yingyong/yanse-rgb-16/</div><div class="line"></div><div class="line">颜色取值</div><div class="line"></div><div class="line">4：在线API</div><div class="line"></div><div class="line">http://tool.oschina.net/apidocs</div><div class="line"></div><div class="line">查阅API</div><div class="line"></div><div class="line">5：思维导图</div><div class="line"></div><div class="line">http://naotu.baidu.com/</div></pre></td></tr></table></figure>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">1：HiJson</div><div class="line"></div><div class="line">json字符串格式化查看工具</div><div class="line"></div><div class="line">2：jd-gui</div><div class="line"></div><div class="line">http://jd.benow.ca/</div><div class="line"></div><div class="line">查看jar源码</div><div class="line"></div><div class="line">3：Typora</div><div class="line"></div><div class="line">https://typora.io/    </div><div class="line"></div><div class="line">Markdown 编辑器 即时效果</div><div class="line"></div><div class="line">4：processon</div><div class="line"></div><div class="line"> https://www.processon.com/</div><div class="line"> </div><div class="line"> 在线流程图</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1767,7 +1776,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1778,7 +1787,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
