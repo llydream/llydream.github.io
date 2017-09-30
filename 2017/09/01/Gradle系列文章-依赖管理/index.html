@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="依赖包本地下载地址1234567891011121314151617181920#### 依赖包地址通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users">
+<meta name="description" content="依赖包本地下载地址1234567891011121314151617181920依赖包地址通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users\用户名\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gradle系列文章-依赖管理">
 <meta property="og:url" content="http://yoursite.com/2017/09/01/Gradle系列文章-依赖管理/index.html">
 <meta property="og:site_name" content="Queen·me">
-<meta property="og:description" content="依赖包本地下载地址1234567891011121314151617181920#### 依赖包地址通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users">
-<meta property="og:updated_time" content="2017-09-01T08:54:14.862Z">
+<meta property="og:description" content="依赖包本地下载地址1234567891011121314151617181920依赖包地址通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users\用户名\">
+<meta property="og:updated_time" content="2017-09-20T02:57:30.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gradle系列文章-依赖管理">
-<meta name="twitter:description" content="依赖包本地下载地址1234567891011121314151617181920#### 依赖包地址通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users">
+<meta name="twitter:description" content="依赖包本地下载地址1234567891011121314151617181920依赖包地址通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users\用户名\">
 
 
 
@@ -361,9 +361,10 @@
       
 
       
-        <h4 id="依赖包本地下载地址"><a href="#依赖包本地下载地址" class="headerlink" title="依赖包本地下载地址"></a><em>依赖包本地下载地址</em></h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="section">#### 依赖包地址</span></div><div class="line">通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？</div><div class="line"></div><div class="line">这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1</div><div class="line"></div><div class="line">情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users\用户名\.gradle\caches\modules-2\file-2.1</div><div class="line">情况二：如果你指定了Gradle的配置位置，则依赖包下载位置为：配置的位置下的.gradle\caches\modules-2\file-2.1</div><div class="line"></div><div class="line">//查看依赖包本地地址</div><div class="line">方式一：</div><div class="line">将项目切换为<span class="code">```Project```视图，右击```External Libraries```中某一个依赖包，选择```Library Properties```，则会显示本地地址</span></div><div class="line">注意：如果你没下载此依赖包的源码则不会显示地址</div><div class="line"></div><div class="line">方式二：(待验证)</div><div class="line"> //显示依赖包的存储路径   </div><div class="line"> task showMeCache &lt;&lt; &#123;</div><div class="line">     configurations.compile.each &#123; println it &#125;</div><div class="line"> &#125;</div><div class="line"> 命令行执行：</div><div class="line">   gradle showMeCache</div></pre></td></tr></table></figure>
+        <h4 id="依赖包本地下载地址"><a href="#依赖包本地下载地址" class="headerlink" title="依赖包本地下载地址"></a><em>依赖包本地下载地址</em></h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">依赖包地址</div><div class="line">通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？</div><div class="line"></div><div class="line">这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1</div><div class="line"></div><div class="line">情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users\用户名\.gradle\caches\modules-2\file-2.1</div><div class="line">情况二：如果你指定了Gradle的配置位置，则依赖包下载位置为：配置的位置下的.gradle\caches\modules-2\file-2.1</div><div class="line"></div><div class="line">//查看依赖包本地地址</div><div class="line">方式一：</div><div class="line">将项目切换为<span class="code">```Project```视图，右击```External Libraries```中某一个依赖包，选择```Library Properties```，则会显示本地地址</span></div><div class="line">注意：如果你没下载此依赖包的源码则不会显示地址</div><div class="line"></div><div class="line">方式二：(待验证)</div><div class="line"> //显示依赖包的存储路径   </div><div class="line"> task showMeCache &lt;&lt; &#123;</div><div class="line">     configurations.compile.each &#123; println it &#125;</div><div class="line"> &#125;</div><div class="line"> 命令行执行：</div><div class="line">   gradle showMeCache</div></pre></td></tr></table></figure>
 <h4 id="修改Gralde默认缓存位置"><a href="#修改Gralde默认缓存位置" class="headerlink" title="修改Gralde默认缓存位置"></a>修改Gralde默认缓存位置</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">新建系统环境变量：<span class="emphasis">*GRADLE_USER_HOME*</span> 指向F:\GradleDir\.gradle</div><div class="line">注意：</div><div class="line">1：系统环境变量名称必须为：GRADLE<span class="emphasis">_USER_</span>HOME</div><div class="line">2：gradle缓存是.gradle文件，GRADLE<span class="emphasis">_USER_</span>HOME只要指向任意位置的.gradle文件即可</div></pre></td></tr></table></figure>
 <h4 id="依赖包下载不了"><a href="#依赖包下载不了" class="headerlink" title="依赖包下载不了"></a><em>依赖包下载不了</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">项目中的依赖包都是从http://jcenter.bintray.com去下载，由于众所周知的原因，此网站访问受限，那么我们可以拥抱阿里，使用阿里仓库</div><div class="line"></div><div class="line">repositories &#123;</div><div class="line"></div><div class="line">        jcenter() &#123; url&apos;http://maven.aliyun.com/nexus/content/groups/public/&apos;&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">（待验证）</div></pre></td></tr></table></figure>
+<h4 id="依赖包重复"><a href="#依赖包重复" class="headerlink" title="依赖包重复"></a><em>依赖包重复</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">在实际开发中，我们的项目不得不引入越来越多的第三方库，这些第三方库可能是jar包，aar包放在libs下的形式，也可能是Library Module形式，也可能是Gradle 远程依赖的形式</div><div class="line"></div><div class="line">由于过多的项目依赖，务必会出现重复引入包的问题，常见的重复包情景就是v4的引入，如果项目中引入了重复包，编译时会报：DexException错误提示</div><div class="line"></div><div class="line">解决方案：</div><div class="line">jar，aar包形式</div><div class="line">Library Module形式：手动删除本地重复包</div><div class="line">Gradle远程依赖形式：在引入地方添加 exclude 语句，根据 group 和 module 过滤规则，将相同引入的包剔除在外即可</div><div class="line">当需要去除多个递归依赖项时，可以使用多条 exclude 语句</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -409,6 +410,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/15/AS-Live-Templates/" rel="prev" title="AS-Live Templates">
+                AS-Live Templates <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -480,7 +485,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -528,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖包本地下载地址"><span class="nav-number">1.</span> <span class="nav-text">依赖包本地下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改Gralde默认缓存位置"><span class="nav-number">2.</span> <span class="nav-text">修改Gralde默认缓存位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖包下载不了"><span class="nav-number">3.</span> <span class="nav-text">依赖包下载不了</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖包本地下载地址"><span class="nav-number">1.</span> <span class="nav-text">依赖包本地下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改Gralde默认缓存位置"><span class="nav-number">2.</span> <span class="nav-text">修改Gralde默认缓存位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖包下载不了"><span class="nav-number">3.</span> <span class="nav-text">依赖包下载不了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖包重复"><span class="nav-number">4.</span> <span class="nav-text">依赖包重复</span></a></li></ol></div>
             
 
           </div>
