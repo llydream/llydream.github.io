@@ -1535,12 +1535,12 @@ pre .javascript .function {
   padding: 0.5em 1em;
   border: 1px solid #d3d3d3;
   font-size: 0.93rem;
-  line-height: 1.6em;
+  line-height: 1em;
   word-break: break-all;
-  background: rgba(255,255,255,0.4);
+  background: rgba(220,220,220,0.4);
 }
 .my_post_copyright p {
-  margin: 0;
+  margin: 5;
 }
 .my_post_copyright span {
   display: inline-block;
@@ -1736,7 +1736,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e70562;
+  background: #d0ff2f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2925,6 +2925,6 @@ pre {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  -webkit-box-shadow: 0 0 8px rgba(220,220,220,0.5);
+  -moz-box-shadow: 0 0 8px rgba(220,220,220,0.5);
 }
