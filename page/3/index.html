@@ -291,6 +291,978 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/09/15/AS-Live-Templates/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/15/AS-Live-Templates/" itemprop="url">
+                  AS-Live Templates
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T09:19:16+08:00">
+                2017-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AS/" itemprop="url" rel="index">
+                    <span itemprop="name">AS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AS/使用技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">使用技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Live Templates 中文介绍 活动模板，亦可理解为某段代码的“快捷键”，旨在帮助开发者提高编码效率</div></pre></td></tr></table></figure>
+<h4 id="预设模板"><a href="#预设模板" class="headerlink" title="预设模板"></a>预设模板</h4><h6 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">fbc --  () findViewById(R.id.);</div><div class="line">gone -- .setVisibility(View.GONE);</div><div class="line">visible -- .setVisibility(View.VISIBLE);</div><div class="line"></div><div class="line"></div><div class="line">rgS --  .getString(R.string.)</div><div class="line">Sfmt-- String.format(<span class="string">""</span>, );</div><div class="line"></div><div class="line"></div><div class="line">IntentView --  Intent view = <span class="keyword">new</span> Intent();</div><div class="line">               view.setAction(Intent.ACTION_VIEW);</div><div class="line">               view.setData(Uri.parse());</div><div class="line">               startActivity(view);</div><div class="line"></div><div class="line">foreach -- <span class="keyword">for</span> (:) &#123;&#125;      </div><div class="line">Toast -- Toast.makeText(<span class="keyword">this</span>, <span class="string">""</span>, Toast.LENGTH_SHORT).show();</div><div class="line">sbc -- <span class="comment">///////////////////////////////////////////////////////////////////////////</span></div><div class="line">       <span class="comment">//</span></div><div class="line">      <span class="comment">///////////////////////////////////////////////////////////////////////////</span></div></pre></td></tr></table></figure>
+<h6 id="plain"><a href="#plain" class="headerlink" title="plain"></a>plain</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> -- <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span></div><div class="line">key-- <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String KEY_ = <span class="string">""</span>;</div><div class="line"></div><div class="line">psf --  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span></div><div class="line">psfi --  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span></div><div class="line">psfs --  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String</div><div class="line">St --String</div></pre></td></tr></table></figure>
+<h6 id="AndroidLog"><a href="#AndroidLog" class="headerlink" title="AndroidLog"></a>AndroidLog</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">logi -- Log.i(TAG, <span class="string">"onCreate: "</span>);</div><div class="line">logd -- Log.d(TAG, <span class="string">"onCreate: "</span>);</div><div class="line">loge -- Log.e(TAG, <span class="string">"onCreate: "</span>, );</div><div class="line">logw -- Log.w(TAG, <span class="string">"onCreate: "</span>, );</div><div class="line">logr -- Log.d(TAG, <span class="string">"onCreate() returned: "</span> + );</div><div class="line">logm -- Log.d(TAG, <span class="string">"onCreate() called with: savedInstanceState = ["</span> + savedInstanceState + <span class="string">"]"</span>);</div><div class="line">wft --  Log.wtf(TAG, <span class="string">"onCreate: "</span>, );</div></pre></td></tr></table></figure>
+<h6 id="AndroidXML"><a href="#AndroidXML" class="headerlink" title="AndroidXML"></a>AndroidXML</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">appNs --  xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">toolsNs --  xmlns:tools=<span class="string">"http://schemas.android.com/tools"</span></div></pre></td></tr></table></figure>
+<h4 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h4><h4 id="保存模板"><a href="#保存模板" class="headerlink" title="保存模板"></a>保存模板</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Tools-&gt;Save as Live templates</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+     <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/09/01/Gradle系列文章-依赖管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/01/Gradle系列文章-依赖管理/" itemprop="url">
+                  Gradle系列文章-依赖管理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T15:55:19+08:00">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Gradle/" itemprop="url" rel="index">
+                    <span itemprop="name">Gradle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="依赖包本地下载地址"><a href="#依赖包本地下载地址" class="headerlink" title="依赖包本地下载地址"></a><em>依赖包本地下载地址</em></h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">依赖包地址</div><div class="line">通常项目都会依赖一些第三方项目，Gradle首次都会下载这些项目到本地，后期使用本地缓存构建项目，那么这些依赖的项目包下载到那里了呢？</div><div class="line"></div><div class="line">这些依赖包都存在在：\.gradle\caches\modules-2\file-2.1</div><div class="line"></div><div class="line">情况一：如果你使用默认的Gradle配置，则这些依赖包下载在:C:\Users\用户名\.gradle\caches\modules-2\file-2.1</div><div class="line">情况二：如果你指定了Gradle的配置位置，则依赖包下载位置为：配置的位置下的.gradle\caches\modules-2\file-2.1</div><div class="line"></div><div class="line">//查看依赖包本地地址</div><div class="line">方式一：</div><div class="line">将项目切换为<span class="code">```Project```视图，右击```External Libraries```中某一个依赖包，选择```Library Properties```，则会显示本地地址</span></div><div class="line">注意：如果你没下载此依赖包的源码则不会显示地址</div><div class="line"></div><div class="line">方式二：(待验证)</div><div class="line"> //显示依赖包的存储路径   </div><div class="line"> task showMeCache &lt;&lt; &#123;</div><div class="line">     configurations.compile.each &#123; println it &#125;</div><div class="line"> &#125;</div><div class="line"> 命令行执行：</div><div class="line">   gradle showMeCache</div></pre></td></tr></table></figure>
+<h4 id="修改Gralde默认缓存位置"><a href="#修改Gralde默认缓存位置" class="headerlink" title="修改Gralde默认缓存位置"></a>修改Gralde默认缓存位置</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">新建系统环境变量：<span class="emphasis">*GRADLE_USER_HOME*</span> 指向F:\GradleDir\.gradle</div><div class="line">注意：</div><div class="line">1：系统环境变量名称必须为：GRADLE<span class="emphasis">_USER_</span>HOME</div><div class="line">2：gradle缓存是.gradle文件，GRADLE<span class="emphasis">_USER_</span>HOME只要指向任意位置的.gradle文件即可</div></pre></td></tr></table></figure>
+<h4 id="依赖包下载不了"><a href="#依赖包下载不了" class="headerlink" title="依赖包下载不了"></a><em>依赖包下载不了</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">项目中的依赖包都是从http://jcenter.bintray.com去下载，由于众所周知的原因，此网站访问受限，那么我们可以拥抱阿里，使用阿里仓库</div><div class="line"></div><div class="line">repositories &#123;</div><div class="line"></div><div class="line">        jcenter() &#123; url&apos;http://maven.aliyun.com/nexus/content/groups/public/&apos;&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">（待验证）</div></pre></td></tr></table></figure>
+<h4 id="依赖包重复"><a href="#依赖包重复" class="headerlink" title="依赖包重复"></a><em>依赖包重复</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">在实际开发中，我们的项目不得不引入越来越多的第三方库，这些第三方库可能是jar包，aar包放在libs下的形式，也可能是Library Module形式，也可能是Gradle 远程依赖的形式</div><div class="line"></div><div class="line">由于过多的项目依赖，务必会出现重复引入包的问题，常见的重复包情景就是v4的引入，如果项目中引入了重复包，编译时会报：DexException错误提示</div><div class="line"></div><div class="line">解决方案：</div><div class="line">jar，aar包形式</div><div class="line">Library Module形式：手动删除本地重复包</div><div class="line">Gradle远程依赖形式：在引入地方添加 exclude 语句，根据 group 和 module 过滤规则，将相同引入的包剔除在外即可</div><div class="line">当需要去除多个递归依赖项时，可以使用多条 exclude 语句</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+     <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/09/01/AS-常见问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/01/AS-常见问题/" itemprop="url">
+                  AS-常见问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T15:27:39+08:00">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AS/" itemprop="url" rel="index">
+                    <span itemprop="name">AS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AS/基本使用/" itemprop="url" rel="index">
+                    <span itemprop="name">基本使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="一：SSL-peer-shut-down-incorrectly"><a href="#一：SSL-peer-shut-down-incorrectly" class="headerlink" title="一：SSL peer shut down incorrectly"></a><em>一：SSL peer shut down incorrectly</em></h4><h6 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Android Studio从2.2升级2.3</div></pre></td></tr></table></figure>
+<h6 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gradle版本不一致</div></pre></td></tr></table></figure>
+<h6 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">因Android Studio 2.3版本要求grale版本为3.3，所以需要下载gradle 3.3版本</div><div class="line">由于GFW原因，建议离线安装Gradle</div></pre></td></tr></table></figure>
+<h4 id="二：failed-to-find-Build-Tools-revision-23-0-0-rc1"><a href="#二：failed-to-find-Build-Tools-revision-23-0-0-rc1" class="headerlink" title="二：failed to find Build Tools revision 23.0.0 rc1"></a><em>二：failed to find Build Tools revision 23.0.0 rc1</em></h4><h6 id="场景-1"><a href="#场景-1" class="headerlink" title="场景"></a>场景</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Android Studio 导入项目</div></pre></td></tr></table></figure>
+<h6 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">build tools 版本不存在</div></pre></td></tr></table></figure>
+<h6 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">在导入项目时，检查module的build.gradle，将build tools修改为自己本地有的版本，抑或下载对应的build tools</div><div class="line"></div><div class="line">查看本地build tools已有版本：</div><div class="line">      AndroidSDK\build-tools</div></pre></td></tr></table></figure>
+<h4 id="三：Button-Text默认全部大写显示"><a href="#三：Button-Text默认全部大写显示" class="headerlink" title="三：Button Text默认全部大写显示"></a><em>三：Button Text默认全部大写显示</em></h4><h6 id="场景-2"><a href="#场景-2" class="headerlink" title="场景"></a>场景</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">layout文件中定义Button，text属性无论怎么输入英文字符统一都是大写显示</div></pre></td></tr></table></figure>
+<h6 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">5.0系统中，Button Style默认显示都是大写</div><div class="line">5.0一下系统，没有此问题</div></pre></td></tr></table></figure>
+<h6 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">设置Button的 android:textAllCaps=&quot;false&quot;即可</div><div class="line"></div><div class="line">如果要每个button都要设置textAllCaps属性，太累，所以可以统一设置button的Style进行引用即可</div></pre></td></tr></table></figure>
+<p>####<em>四：Unable to access Android SDK add-on list</em></p>
+<h6 id="场景-3"><a href="#场景-3" class="headerlink" title="场景"></a>场景</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">安装AS后，第一次运行时弹出此错误</div></pre></td></tr></table></figure>
+<h6 id="原因-3"><a href="#原因-3" class="headerlink" title="原因"></a>原因</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1：SDK没有设置对</div><div class="line">2：下载的AS是不带Android SDk</div></pre></td></tr></table></figure>
+<h6 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1：找到idea.properties在末尾出添加</div><div class="line">  disable.android.first.run=true</div><div class="line">2：打开项目后，重新设置SDK</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+     <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/08/28/Android-Lint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/28/Android-Lint/" itemprop="url">
+                  Android-Lint
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T16:40:11+08:00">
+                2017-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Android基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android基础知识/Android-工具/" itemprop="url" rel="index">
+                    <span itemprop="name">Android 工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+     <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/08/22/Android-traceview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/22/Android-traceview/" itemprop="url">
+                  Android-traceview
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-22T11:25:06+08:00">
+                2017-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Android基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android基础知识/Android-工具/" itemprop="url" rel="index">
+                    <span itemprop="name">Android 工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+     <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/08/22/Android-Hierarch-Viewer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Queen·me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Queen·me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/22/Android-Hierarch-Viewer/" itemprop="url">
+                  Android-Hierarch Viewer
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-22T11:23:55+08:00">
+                2017-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Android基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android基础知识/Android-工具/" itemprop="url" rel="index">
+                    <span itemprop="name">Android 工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+     <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/08/22/Android-Monkey/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -893,863 +1865,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/08/15/Java-Math/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/15/Java-Math/" itemprop="url">
-                  Java-Math
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T10:57:47+08:00">
-                2017-08-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">Java基础知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Math类是java.lang包下一个用于数学计算的工具类，其含有各种数学计算的方法</div></pre></td></tr></table></figure>
-<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">double	E 数学常数 e = 2.718281828459045</div><div class="line">double	PI 圆周率 3.141592653589793</div></pre></td></tr></table></figure>
-<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><h6 id="三角函数方法"><a href="#三角函数方法" class="headerlink" title="三角函数方法"></a>三角函数方法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">static double sin(double a) 正弦</div><div class="line">static double cos(double a) 余弦</div><div class="line">static double tan(double a) 正切</div><div class="line">static double asin(double a) 反正弦</div><div class="line">static double acos(double a) 反余弦</div><div class="line">static double atan(double a) 反正切</div><div class="line">static double toDegrees(double angrad) 角度转弧度</div><div class="line">static double toRadians(double angdeg) 弧度转角度</div></pre></td></tr></table></figure>
-<h6 id="指数-对数函数方法"><a href="#指数-对数函数方法" class="headerlink" title="指数,对数函数方法"></a>指数,对数函数方法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">static double sqrt(double a) 平方根</div><div class="line">static double cbrt(double a) 立方根</div><div class="line">static double exp(double a) e的a次方(指数)</div><div class="line">static double log(double a) 以e为底，a的对数 自然对数 记为：ln</div><div class="line">static double log10(double a) 以10为底 a的对数  常用对数 记为：lg</div><div class="line">static double pow(double a, double b) a的b次方</div></pre></td></tr></table></figure>
-<h6 id="取整函数方法"><a href="#取整函数方法" class="headerlink" title="取整函数方法"></a>取整函数方法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">static double ceil(double a)  大于等于a的整数值(下一个整数)</div><div class="line">static double floor(double a) 小于等于a的整数值(上一个整数)</div><div class="line">static double rint(double a) 与a接近的整数值，如果两个同为整数且同样接近，选取偶数值那个</div><div class="line">static long round(double a) 四舍五入整数值</div><div class="line">static int round(float a) 四舍五入整数值</div></pre></td></tr></table></figure>
-<h6 id="最值函数方法"><a href="#最值函数方法" class="headerlink" title="最值函数方法"></a>最值函数方法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">绝对值</div><div class="line">static long	abs(long a)</div><div class="line">static int abs(int a)</div><div class="line">static float abs(float a)</div><div class="line">static double abs(double a)</div><div class="line"></div><div class="line">最大值</div><div class="line">static int	max(int a, int b)</div><div class="line">static long	max(long a, long b)</div><div class="line">static float max(float a, float b)</div><div class="line">static double max(double a, double b)</div><div class="line"></div><div class="line">最小值</div><div class="line">static float min(float a, float b)</div><div class="line">static double min(double a, double b)</div><div class="line">static int	min(int a, int b)</div><div class="line">static long	min(long a, long b)</div></pre></td></tr></table></figure>
-<h6 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">static double random() 返回一个0到1之间的double值</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-     <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/07/21/MaterialDesign-CoordinatorLayout（协调者布局）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/21/MaterialDesign-CoordinatorLayout（协调者布局）/" itemprop="url">
-                  MaterialDesign-CoordinatorLayout（协调者布局）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T11:38:59+08:00">
-                2017-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MaterialDesign/" itemprop="url" rel="index">
-                    <span itemprop="name">MaterialDesign</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-     <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/07/21/Gradle系列文章-认识Gradle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/21/Gradle系列文章-认识Gradle/" itemprop="url">
-                  Gradle系列文章-认识Gradle
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T10:36:46+08:00">
-                2017-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Gradle/" itemprop="url" rel="index">
-                    <span itemprop="name">Gradle</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-     <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/07/20/DesignPattern-SingletonPattern（单例模式）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/20/DesignPattern-SingletonPattern（单例模式）/" itemprop="url">
-                  DesignPattern-SingletonPattern（单例模式）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-20T16:11:46+08:00">
-                2017-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DesignPattern/" itemprop="url" rel="index">
-                    <span itemprop="name">DesignPattern</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-     <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/07/14/Android-APK反编译/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/14/Android-APK反编译/" itemprop="url">
-                  Android-APK反编译
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T15:34:53+08:00">
-                2017-07-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-     <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://llydream.github.io/2017/07/14/Android-APK生成过程分析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Queen·me">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Queen·me">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/14/Android-APK生成过程分析/" itemprop="url">
-                  Android-APK生成过程分析
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T15:34:34+08:00">
-                2017-07-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-     <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1799,7 +1914,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1810,7 +1925,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1821,7 +1936,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
